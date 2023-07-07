@@ -3,13 +3,14 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Page title</title>
+    <title>Bookshelf</title>
     <link rel="stylesheet" href="./sass/index.scss" />
     <script type="module" src="./index.js"></script>
   </head>
-  <body>
+  <body class="light">
     <include src="./partials/header.html"></include>
-    <!-- ❗️❗️❗️ Add partials like so for every page -->
-    <include src="./partials/all_categories.html"></include>
+    <main>
+      <include src="./partials/all_categories.html"></include>
+    </main>   
   </body>
 </html>
