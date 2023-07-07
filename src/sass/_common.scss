@@ -32,3 +32,69 @@
   src: url('../fonts/dm-sans-v13-latin-700.woff2') format('woff2'),
     url('../fonts/dm-sans-v13-latin-700.woff') format('woff');
 }
+
+/*========VARIABLES========*/
+$clr-background-light: #f6f6f6;
+$clr-background-dark: #202024;
+$clr-brand:#4F2EE8;
+$clr-accent: #EAC645;
+
+/*========COMMON RULES========*/
+body {
+  margin: 0;
+  font-family: 'DM Sans', sans-serif;
+}
+
+ul,
+ol {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.container {
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-right: auto;
+  margin-left: auto;
+
+  @media (min-width: 380px) {
+    width: 380px;
+  }
+
+  @media (min-width: 768px) {
+    width: 768px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+
+  @media (min-width: 1440px) {
+    width: 1158px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
