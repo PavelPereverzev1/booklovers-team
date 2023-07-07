@@ -10,7 +10,7 @@
   height: 466px;
   overflow: scroll;
   overflow-x: hidden;
-  margin-bottom: 86px;
+  margin-bottom: 92px;
 }
 
 .categories_list a {
@@ -70,7 +70,7 @@
 }
 
 .top_of_genres_div {
-  padding-top: 40px;
+  margin-top: 40px;
 }
 .top_genre_cards_list {
   display: flex;
@@ -104,11 +104,15 @@
   margin-bottom: 14px;
 }
 .see_more_btn {
+  display: flex;
+  padding: 12px 26px;
+  align-items: flex-start;
+  gap: 10px;
   border-radius: 40px;
   border: 2px solid #4f2ee8;
-  cursor: pointer;
+
   color: #111;
-  padding: 14px 28px;
+
   font-size: 14px;
   font-style: normal;
   font-weight: 700;
