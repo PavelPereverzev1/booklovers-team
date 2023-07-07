@@ -25,7 +25,8 @@
     "@parcel/transformer-sass": "^2.6.0",
     "parcel": "^2.6.0",
     "parcel-reporter-clean-dist": "^1.0.4",
-    "posthtml-include": "^1.7.4"
+    "posthtml-include": "^1.7.4",
+    "sharp": "^0.31.3"
   },
   "browserslist": "> 0.5%, last 2 versions, not dead"
 }
