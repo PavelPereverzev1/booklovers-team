@@ -1,0 +1,126 @@
+.all_categories {
+  display: flex;
+}
+
+.left_all_categories {
+  min-width: 356px;
+  margin-right: 40px;
+}
+.categories_list_div {
+  height: 466px;
+  overflow: scroll;
+  overflow-x: hidden;
+  margin-bottom: 92px;
+}
+
+.categories_list a {
+  text-decoration: none;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: -0.36px;
+  color: #111;
+  opacity: 60%;
+}
+.categories_list li:first-child a {
+  color: $clr-brand;
+  text-transform: uppercase;
+  font-weight: bold;
+  opacity: 100%;
+}
+
+.categories_list li {
+  margin-bottom: 32px;
+}
+
+.best_sellers_header {
+  color: #111;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 52px;
+  letter-spacing: -1.92px;
+}
+.h1_span_color {
+  color: $clr-brand;
+}
+.support_ukraine_div {
+  width: 356px;
+  height: 490px;
+  border-radius: 16px;
+  background: radial-gradient(
+    189.32% 190.93% at 59.76% -23.42%,
+    #4f2ee8 18.03%,
+    #fff 100%
+  );
+  box-shadow: 0px 10px 10px 0px rgba(245, 245, 247, 0.1);
+}
+.all_genres_list_header {
+  color: #b4afaf;
+  font-family: DM Sans;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0.42px;
+  text-transform: uppercase;
+  margin: 0px;
+  margin-bottom: 18px;
+}
+
+.top_of_genres_div {
+  margin-top: 40px;
+}
+.top_genre_cards_list {
+  display: flex;
+  gap: 24px;
+  margin-bottom: 32px;
+}
+.name_of_the_book {
+  color: #111;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 18px;
+  letter-spacing: -0.64px;
+  text-transform: uppercase;
+  margin-bottom: 4px;
+}
+.writer_name {
+  color: #b4afaf;
+  font-size: 12px;
+  font-style: italic;
+  font-weight: 400;
+  line-height: 14px;
+  letter-spacing: -0.48px;
+}
+
+.image_place_test {
+  width: 180px;
+  height: 256px;
+  border-radius: 8px;
+  background-color: $clr-accent;
+  margin-bottom: 14px;
+}
+.see_more_btn {
+  display: flex;
+  padding: 12px 26px;
+  align-items: flex-start;
+  gap: 10px;
+  border-radius: 40px;
+  border: 2px solid #4f2ee8;
+
+  color: #111;
+
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 18px;
+  letter-spacing: -0.14px;
+  text-transform: uppercase;
+}
+.btn_see_more_div {
+  display: flex;
+  flex-direction: row-reverse;
+}
