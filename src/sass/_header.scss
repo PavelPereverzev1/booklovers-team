@@ -36,3 +36,16 @@
 .toggle__input:checked ~ .toggle__fill::after {
     transform: translateX(var(--height));
 }
+.header-sec {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0 auto;
+}
+.nav-list {
+    display: flex;
+    align-items: baseline;
+}
+.nav {
+    display: flex;
+}
