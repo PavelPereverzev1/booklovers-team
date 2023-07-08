@@ -1,6 +1,8 @@
-import Swiper from 'swiper';
-import { Navigation} from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
+import Swiper, {Navigation} from 'swiper';
+// import 'swiper/swiper-bundle.css';
 
+import markup from './create-markup';
 
+const sliderRef = document.querySelector('.swiper-wrapper');
+
+sliderRef.insertAdjacentHTML('beforeend', markup);
