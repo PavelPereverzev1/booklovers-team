@@ -1,0 +1,234 @@
+
+a{
+    text-decoration: none;
+}
+
+.modal-backdrop{
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    cursor: pointer;
+    z-index: 50;
+    background-color: #1116;
+    padding: 94px 15px;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.modal{
+    z-index: 100;
+    position: absolute;
+  top: 50%;
+  left: 50%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  transform: translate(-50%,-50%)scale(1);
+    max-height: 85vw;
+    min-width: 335px;
+    background-color: #FFFFFF;
+    border: 2px solid #111111;
+    border-radius: 18px;
+    padding-top: 0;
+    padding-bottom: 40px;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+@media  screen and (min-width: 768px ) {
+    .modal{
+        min-height: 465px;
+        max-width: 579px;
+        padding: 40px;
+        margin: auto;
+    }
+    
+}
+
+.modal-close-btn{
+    width: 24px;
+    height: 24px;
+   background: inherit;
+   border: none;
+   cursor: pointer;
+  position: sticky;
+  top: 12px;
+  left: 100%;
+   padding: 0;
+margin-top: 12px;
+margin-bottom: 4px;
+
+}
+
+@media  screen and (min-width: 768px ) {
+    .modal-close-btn{
+        width: 28px;
+        height: 28px;
+        position: absolute;
+        top: 16px;
+        left: 527px;
+    }
+    
+}
+
+.modal-close-icon{
+    width: 24px;
+    height: 24px;
+    stroke: #111111;
+    transition: stroke .25s cubic-bezier(.4,0,.2,1),color .25s cubic-bezier(.4,0,.2,1);
+}
+
+
+@media  screen and (min-width: 768px ) {
+    .modal-close-btn{
+        width: 28px;
+        height: 28px;
+    }
+    
+}
+
+.modal-close-icon:hover,
+.modal-close-icon:focus{
+    stroke: #4F2EE8;
+}
+
+
+@media  screen and (min-width: 768px ) {
+    .modal-flex-container{
+        display: flex;
+    }
+    
+}
+
+.modal-image-book{
+    max-width: 287px;
+    min-height: 408px;
+    margin-bottom: 14px;
+   
+    display: flex;
+  margin-left: auto;
+    margin-right: auto;
+}
+
+@media  screen and (min-width: 768px ) and (max-width: 1440px) {
+    .modal-image-book{
+        max-width: 192px;
+        min-height: 281px;
+        margin-bottom: 40px;
+        margin-right: 24px;
+    }
+    
+}
+
+
+@media  screen and (min-width: 768px ) {
+    .modal-flex-content{
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+
+.modal-book-name{
+    font-family: 'DM Sans';
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.13;
+  letter-spacing: -.04em;
+  margin-bottom: 4px;
+}
+
+@media  screen and (min-width: 768px ) {
+    .modal-book-name{
+        font-size: 24px;
+        line-height: 1.16;
+        letter-spacing: -.04em;
+        margin-bottom: 8px;
+    }
+}
+
+.modal-author{
+    font-family: 'DM Sans';
+    font-style: italic;
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.16;
+    letter-spacing: -.04em;
+    color: #B4AFAF;
+    margin-bottom: 18px;
+}
+
+@media  screen and (min-width: 768px ) {
+    .modal-author{
+        font-size: 14px;
+        line-height: 1.28;
+        letter-spacing: -.04em;
+        margin-bottom: 20px;
+    }
+}
+
+.modal-description{
+    font-family: 'DM Sans';
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 1.28;
+    letter-spacing: -.04em;
+    margin-bottom: 14px;
+}
+
+@media  screen and (min-width: 768px ) {
+    .modal-description{
+        margin-bottom: 20px;
+    }
+}
+
+.shops-container{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+@media  screen and (min-width: 768px ) {
+    .shops-container{
+        margin-bottom: 0px;
+    }
+}
+
+.modal-add-btn{
+    width: 211px;
+    height: 46px;
+    margin-right: auto;
+    margin-left: auto;
+    background-color: inherit;
+    border: 2px solid #4F2EE8;
+    border-radius: 40px;
+    transition: background-color .25s cubic-bezier(.4,0,.2,1),color .25s cubic-bezier(.4,0,.2,1);
+    font-family: 'DM Sans';
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 1.28;
+    letter-spacing: -.01em;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-add-btn:hover,
+.modal-add-btn:focus{
+    background: #4F2EE8;
+    color: #FFFFFF;
+}
+
+
+@media  screen and (min-width: 768px ) {
+    .modal-add-btn{
+        width: 499px;
+        height: 64px;
+        font-size: 18px;
+    line-height: 1.33;
+    letter-spacing: -.01em;
+    }
+}
+
