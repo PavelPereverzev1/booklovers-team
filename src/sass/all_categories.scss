@@ -96,7 +96,7 @@
   letter-spacing: -0.48px;
 }
 
-.image_place_test {
+.bestSellers_image_place {
   width: 180px;
   height: 256px;
   border-radius: 8px;
@@ -123,4 +123,5 @@
 .btn_see_more_div {
   display: flex;
   flex-direction: row-reverse;
+  max-width: 996px;
 }

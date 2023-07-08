@@ -1,6 +1,5 @@
 import fondsData from './ukr-sprt-data';
 
-const markup = fondsData.map(createMarkup).join('');
 
 function createMarkup(slide, index){
     return `<div class="swiper-slide">
@@ -20,4 +19,4 @@ function createMarkup(slide, index){
   </div>`;
 }
 
-export default markup;
+export default createMarkup;
