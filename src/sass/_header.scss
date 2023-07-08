@@ -3,7 +3,7 @@
     align-content: center;
 }
 
-.welcome-btn {
+.sing-up-btn {
     width: 184px;
     height: 45px;
     border-radius: 36px;
@@ -63,7 +63,6 @@
     align-items: center;
     margin: 0 auto;
     gap: 24px;
-    border: #000 2px solid;
     border-bottom-left-radius: 8px;
     border-bottom-right-radius: 8px;
 
@@ -81,7 +80,6 @@
 .burger-ico {
     width: 28px;
     height: 28px;
-    stroke: #111111;
 }
 .burger-ico:hover {
     stroke: #4F2EE8;
@@ -94,7 +92,6 @@
     font-family: 'DM Sans';
     font-weight: 700;
     font-size: 14px;
-    color: #000;
     display: flex;
     align-items: center;
     padding: 18px 0;
@@ -107,7 +104,6 @@
 .btn-icon {
     width: 20px;
     height: 20px;
-    fill: black;
   }
 .right-side {
     display: flex;
@@ -119,7 +115,6 @@
     font-size: 18px;
     text-transform: uppercase;
     font-weight: 700;
-    color: #111;
     display: flex;
     align-items: center;
 }
@@ -127,7 +122,6 @@
     background-color: #EAC645;
     border-radius: 36px;
     padding: 7px 16px;
-    color: #111;
 }
 .nav-list {
     align-items: center;
@@ -137,24 +131,22 @@
     .burger-btn {
         display: none;
     }
-    .welcome-btn {
+    .sing-up-btn {
         display: flex;
     }
     .nav-list {
         display: flex;
     }
-
-   
 }
 // dark theme
-.dark {
-    background-color: #111;
-    border-color: #ffffff;
-}
-.dark-txt {
-    color: #ffffff;
-}
-.dark-ico {
-    fill: #ffffff;
-    stroke: #ffffff;
-}
+// .dark {
+//     background-color: #111;
+//     border-color: #ffffff;
+// }
+// .dark-txt {
+//     color: #ffffff;
+// }
+// .dark-ico {
+//     fill: #ffffff;
+//     stroke: #ffffff;
+// }
