@@ -1,0 +1,232 @@
+@import '~node_modules/modern-normalize/modern-normalize.css';
+@font-face {
+  font-display: swap;
+  font-family: "DM Sans";
+  font-weight: 400;
+  src: url("../fonts/dm-sans-v13-latin-regular.woff2") format("woff2"), url("../fonts/dm-sans-v13-latin-regular.woff") format("woff");
+}
+@font-face {
+  font-display: swap;
+  font-family: "DM Sans";
+  font-style: italic;
+  font-weight: 400;
+  src: url("../fonts/dm-sans-v13-latin-italic.woff2") format("woff2"), url("../fonts/dm-sans-v13-latin-italic.woff") format("woff");
+}
+@font-face {
+  font-display: swap;
+  font-family: "DM Sans";
+  font-weight: 500;
+  src: url("../fonts/dm-sans-v13-latin-500.woff2") format("woff2"), url("../fonts/dm-sans-v13-latin-500.woff") format("woff");
+}
+@font-face {
+  font-display: swap;
+  font-family: "DM Sans";
+  font-weight: 700;
+  src: url("../fonts/dm-sans-v13-latin-700.woff2") format("woff2"), url("../fonts/dm-sans-v13-latin-700.woff") format("woff");
+}
+/*========VARIABLES========*/
+/*========COMMON RULES========*/
+body {
+  margin: 0;
+  font-family: "DM Sans", sans-serif;
+}
+
+ul,
+ol {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.link {
+  color: inherit;
+  text-decoration: none;
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.container {
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (min-width: 380px) {
+  .container {
+    width: 380px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    width: 768px;
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+}
+@media (min-width: 1440px) {
+  .container {
+    width: 1440px;
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+}
+
+a {
+  text-decoration: none;
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  background-color: #FFFFFF;
+  padding: 40px 24px;
+  border: 2px solid #111111;
+  border-radius: 18px;
+}
+
+@media screen and (min-width: 768px) {
+  .modal {
+    height: 579px;
+    width: 501px;
+    padding: 40px;
+    margin: auto;
+  }
+}
+.modal-close-btn {
+  width: 24px;
+  height: 24px;
+  background: inherit;
+  border: none;
+  cursor: pointer;
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 0;
+}
+
+@media screen and (min-width: 768px) {
+  .modal-close-btn {
+    width: 28px;
+    height: 28px;
+    top: 24px;
+    right: 24px;
+  }
+}
+.modal-close-icon {
+  width: 24px;
+  height: 24px;
+  stroke: #111111;
+  transition: stroke 0.25s cubic-bezier(0.4, 0, 0.2, 1), color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@media screen and (min-width: 768px) {
+  .modal-close-btn {
+    width: 28px;
+    height: 28px;
+  }
+}
+.modal-close-icon:hover,
+.modal-close-icon:focus {
+  stroke: #4F2EE8;
+}
+
+@media screen and (min-width: 768px) {
+  .flex-container {
+    display: flex;
+  }
+}
+.modal-image-book {
+  width: 287px;
+  height: 408px;
+  margin-bottom: 14px;
+  display: flex;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1440px) {
+  .modal-image-book {
+    width: 192px;
+    height: 281px;
+    margin-bottom: 40px;
+  }
+}
+.modal-book-name {
+  font-family: "DM Sans";
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.13;
+  letter-spacing: -0.04em;
+  margin-bottom: 4px;
+}
+
+.modal-author {
+  font-family: "DM Sans";
+  font-style: italic;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.16;
+  letter-spacing: -0.04em;
+  color: #B4AFAF;
+  margin-bottom: 18px;
+}
+
+.modal-description {
+  font-family: "DM Sans";
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 1.28;
+  letter-spacing: -0.04em;
+  margin-bottom: 14px;
+}
+
+.shops-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+.modal-add-btn {
+  width: 211px;
+  height: 46px;
+  margin-right: auto;
+  margin-left: auto;
+  background-color: inherit;
+  border: 2px solid #4F2EE8;
+  border-radius: 40px;
+  transition: background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1), color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: "DM Sans";
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.28;
+  letter-spacing: -0.1em;
+}
+
+.modal-add-btn:hover,
+.modal-add-btn:focus {
+  background: #4F2EE8;
+  color: #FFFFFF;
+}/*# sourceMappingURL=index.css.map */
