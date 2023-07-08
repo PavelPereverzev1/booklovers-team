@@ -44,7 +44,19 @@ body {
   margin: 0;
   font-family: 'DM Sans', sans-serif;
 }
+button {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+  line-height: 0;
+}
 
+a {
+  text-decoration: none;
+}
 ul,
 ol {
   list-style-type: none;
