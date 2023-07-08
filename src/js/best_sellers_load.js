@@ -47,7 +47,7 @@ async function fetchData() {
               ${li_insert_item}
             </ul>
              <div class="btn_see_more_div">
-            <button class="see_more_btn">see more</button>
+            <button class="see_more_btn" data-category="${genre.list_name}">see more</button>
           </div>
           </div>
           </li>`;
