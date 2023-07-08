@@ -44,6 +44,16 @@ body {
   margin: 0;
   font-family: 'DM Sans', sans-serif;
 }
+button {
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: inherit;
+  background-color: transparent;
+  cursor: pointer;
+  line-height: 0;
+}
+
 a {
   text-decoration: none;
 }
@@ -99,13 +109,4 @@ p {
     padding-left: 24px;
     padding-right: 24px;
   }
-}
-.logo-icon {
-  width: 24px;
-  height: 24px;
-}
-.btn-icon {
-  width: 24px;
-  height: 24px;
-  fill: black;
 }
