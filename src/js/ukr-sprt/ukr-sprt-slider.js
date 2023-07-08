@@ -8,6 +8,7 @@ const markup = fondsData.map(createMarkup).join('');
 const sliderRef = document.querySelector('.swiper-wrapper');
 
 sliderRef.insertAdjacentHTML('beforeend', markup);
+sliderRef.insertAdjacentHTML('beforeend', markup);
 
 // Swiper.use([Navigation]);
 const swiper = new Swiper('.swiper-container', {
