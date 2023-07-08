@@ -1,0 +1,66 @@
+.shoping_list_title {
+    margin-top: 40px;
+    margin-bottom: 120px;
+    
+    font-size: 32px;
+    line-height: 38px;
+}
+ @media (min-width: 768px) {
+    .shoping_list_title {
+        margin-top: 40px;
+        margin-bottom: 140px;
+
+        font-size: 48px;
+        line-height: 52px;
+    }
+ }
+
+.shoping_list_title_brand {
+    color: $clr-brand;
+    margin-right: auto;
+}
+
+.shoping_list_box {
+    width: 265px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (min-width: 768px) {
+    .shoping_list_box {
+        width: 349px;
+    }
+}
+
+.shoping_list_text {
+    display: block;
+    color: rgba(0, 0, 0, 0.60);
+    text-align: center;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: -0.28px;
+
+    margin: 0 10.5px 14px 10.5px;
+ }
+
+ @media (min-width: 768px) {
+    .shoping_list_text {
+        font-size: 18px;
+        line-height: 24px;
+        letter-spacing: -0.36px;
+        margin: 0 0 20px;
+        }
+ }
+
+ .shoping_list_image {
+    width: 265px;
+ }
+
+ @media (min-width: 768px) {
+    .shoping_list_image {
+        display: block;
+        width: 322px;
+        margin-left: 13.5px;
+        margin-right: 13.5px;
+    }
+ }
