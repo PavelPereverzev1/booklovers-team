@@ -49,8 +49,8 @@
 }
 
 .swiper-wrapper {
-  margin-top: 40px;
   display: flex;
+  max-height: 292px;
   flex-direction: column;
   transition: transform 0.3s;
 }
@@ -96,10 +96,10 @@
     bottom: 24px;
   }
 }
-.swiper-button-next:after,
-.swiper-rtl .swiper-button-prev:after {
-  content: none ;
-}
+// .swiper-button-next:after,
+// .swiper-rtl .swiper-button-prev:after {
+//   content: none ;
+// }
 
 .slider__png {
   filter: brightness(0) invert(1);
