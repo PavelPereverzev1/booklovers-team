@@ -37,12 +37,43 @@ export default class bookAPI {
         targetEl.innerHTML = markup.join('');
     }
 
-    async getAllBookInCategory() {
+    async getAllBookInCategory(categoryName) {
         
-        const listCategory = document.querySelector(this.listEl);
-        listCategory.addEventListener("click", handleListCategory);
+            // let categories = '';
+            try {
+                const response = await fetch(`https://books-backend.p.goit.global/books/category?category=${categoryName}`);
 
-        async function handleListCategory (listElement) {
+                if (!response.ok) {
+                    throw new Error('Failed to fetch books');
+                }
+    
+                const categories = await response.json();
+                // console.log(categories);
+                return categories;
+
+            } catch (error){
+                    console.error(error);
+            }
+
+    }
+
+    async renderAllBooksInCategory() {
+        const contentBox = document.querySelector('.best_sellers_div');
+
+        const listCategory = document.querySelector(this.listEl);
+        
+        listCategory.addEventListener("click", (event) => {
+                const categoryName = this.getCategoryName(event);
+
+
+                const categories = this.getAllBookInCategory(categoryName);
+                categories.then((res) => console.log(res)).catch(e => console.error(e));
+        });
+        
+    }
+
+    getCategoryName (listElement) {
+            // console.dir(listElement);
             const targetEl = listElement.target;
             
             const allItems = targetEl.parentNode.childNodes;
@@ -55,27 +86,16 @@ export default class bookAPI {
             targetEl.classList.add("categories-list-item-selected");
 
             const categoryName = targetEl.textContent;
-            let categories = '';
-            try {
-                const response = await fetch(`https://books-backend.p.goit.global/books/category?category=${categoryName}`);
 
-                if (!response.ok) {
-                    throw new Error('Failed to fetch books');
-                }
-    
-                categories = await response.json();
+            console.log(categoryName);
+            return categoryName;
 
-            } catch (error){
-                    console.error(error);
-            }
-
-          console.log(categoryName);
-          console.log(categories);
-        }
+        
     }
 
-    async renderBooksInCategory(booksArray){
 
+    async renderBestSellers() {
+        console.log("test");
     }
 
     }
