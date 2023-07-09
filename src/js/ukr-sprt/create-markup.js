@@ -1,11 +1,5 @@
 import fondsData from './ukr-sprt-data';
 
-console.log('test');
-const sliderRef = document.querySelector('.swiper-wrapper');
-
-const markup = fondsData.map(createMarkup).join('');
-
-sliderRef.insertAdjacentHTML('beforeend', markup);
 
 function createMarkup(slide, index){
     return `<div class="swiper-slide">
@@ -25,3 +19,4 @@ function createMarkup(slide, index){
   </div>`;
 }
 
+export default createMarkup;

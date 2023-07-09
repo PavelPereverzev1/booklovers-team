@@ -1,7 +1,7 @@
 <header class="header" id="header">
-<div class="container header-sec" >
+<div class="container header-sec" >    <!--dark-->
     <nav class="nav">
-        <a class="logo" href="#">
+        <a class="logo" href="#">   <!--dark-txt-->
             <svg class="logo-icon">
                 <use href="./images/icons.svg#icon-logo"> 
                 </use>
@@ -9,23 +9,30 @@
             Bookshelf
         </a>
     <ul class="nav-list">
-        <li class="nav-item">
-            <a href="#header">Home</a>
+        <li class="nav-item current">
+            <a class="nav-link" href="#header">Home</a>
         </li>
         <li class="nav-item">
-            <a href="//shopping-list.html">Shopping list
+            <a class="nav-link" href="./shopping-list.html">Shopping list&emsp;
                 <svg class="btn-icon">
                     <use href="./images/icons.svg#icon-cart"> 
                     </use>
-                </svg>
+                </svg>    
             </a>
         </li>
     </ul>
     </nav> 
+    <div class="right-side">
     <label class="toggle" for="myToggle">
-        <input class="toggle__input" name="" type="checkbox" id="myToggle">
+        <input class="toggle__input js-switch-theme" name="" type="checkbox" id="myToggle">
         <div class="toggle__fill"></div>
     </label>
-    <button class="welcom-btn" type="button">Welcome</button>
+    <button type="button" class="burger-btn">
+       <svg class="burger-ico">     <!-- dark-ico -->
+            <use href="./images/icons.svg#icon-align-left"></use>
+        </svg>
+    </button>
+    <button class="sing-up-btn" type="button">Welcome</button>
+    </div>
 </div>
 </header>
