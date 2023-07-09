@@ -73,8 +73,11 @@
   margin-top: 40px;
 }
 .top_genre_cards_list {
+  max-width: 1000px;
+  
   display: flex;
   gap: 24px;
+  flex-wrap: wrap;
   margin-bottom: 32px;
 }
 .name_of_the_book {
