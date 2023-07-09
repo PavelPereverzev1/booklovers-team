@@ -5,6 +5,25 @@
 @import './spinner';
 @import './modal';
 @import './shoping-list-body';
-@import './categories-list'
+@import './categories-list';
+
+:root {
+    --var-body-bg: #F6F6F6;
+    --var-header-bg: #FFF;
+    --var-text-fc: #111;
+    --var-logo-clr: #000;
+    --var-ico-brg: #111; 
+    --var-hover-fc: #4F2EE8;
+}
+
+[dark] {
+    --var-body-bg: #202024;
+    --var-header-bg: #111;
+    --var-text-fc: #FFF;
+    --var-logo-clr: #F3F3F3;
+    --var-ico-brg: #FFF; 
+    --var-hover-fc: #EAC645;
+}
+
 
 
