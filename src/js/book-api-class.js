@@ -72,4 +72,8 @@ export default class bookAPI {
         }
     }
 
-}
+    async renderBooksInCategory(booksArray){
+
+    }
+
+    }
