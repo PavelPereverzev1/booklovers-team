@@ -36,12 +36,20 @@
 
 .best_sellers_header {
   color: #111;
-  font-size: 48px;
+  font-size: 32px;
   font-style: normal;
   font-weight: 700;
-  line-height: 52px;
-  letter-spacing: -1.92px;
+  line-height: 38px;
+  letter-spacing: -1.28px;
+
+  @media (min-width: 768px) {
+    font-size: 48px;
+    font-style: normal;
+    line-height: 52px;
+    letter-spacing: -1.92px;
+  }
 }
+
 .h1_span_color {
   color: $clr-brand;
 }
@@ -58,24 +66,46 @@
 }
 .all_genres_list_header {
   color: #b4afaf;
-  font-family: DM Sans;
   font-size: 14px;
   font-style: normal;
   font-weight: 400;
-  line-height: 24px;
+  line-height: 18px;
   letter-spacing: 0.42px;
   text-transform: uppercase;
-  margin: 0px;
   margin-bottom: 18px;
+  @media (min-width: 768px) {
+    line-height: 24px;
+  }
 }
 
 .top_of_genres_div {
-  margin-top: 40px;
+  padding-top: 40px;
 }
 .top_genre_cards_list {
-  display: flex;
-  gap: 24px;
-  margin-bottom: 32px;
+  margin-bottom: 8px;
+  @media (max-width: 767px) {
+    li:not(:first-child) {
+      display: none;
+    }
+  }
+
+  @media (max-width: 1439px) {
+    li:not(:nth-child(-n + 3)) {
+      display: none;
+    }
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 20px;
+  }
+  @media (min-width: 1440px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 24px;
+    margin-bottom: 32px;
+  }
 }
 .name_of_the_book {
   color: #111;
@@ -97,11 +127,18 @@
 }
 
 .bestSellers_image_place {
-  width: 180px;
-  height: 256px;
   border-radius: 8px;
-  background-color: $clr-accent;
+  width: 335px;
+  height: 485px;
   margin-bottom: 14px;
+  @media (min-width: 768px) {
+    width: 218px;
+    height: 316px;
+  }
+  @media (min-width: 1440px) {
+    width: 180px;
+    height: 256px;
+  }
 }
 .see_more_btn {
   display: flex;
@@ -119,6 +156,15 @@
   line-height: 18px;
   letter-spacing: -0.14px;
   text-transform: uppercase;
+  transition: 500ms;
+}
+
+.see_more_btn:hover {
+  @media (min-width: 1440px) {
+    background-color: #4f2ee8;
+    color: #fff;
+    transform: scale(1.2);
+  }
 }
 .btn_see_more_div {
   display: flex;
