@@ -6,8 +6,13 @@ const api = new bookAPI();
 
 api.renderAllCategoriesList(".categories-list");
 
-api.getAllBookInCategory();
+// const categoryName = api.getCategoryName();
 
+// api.getAllBookInCategory(categoryName);
+
+api.renderAllBooksInCategory();
+
+// api.getCategoryName();
 
 
 
