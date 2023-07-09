@@ -42,9 +42,9 @@ const onSeeMoreBtnClick = async e => {
 
     API.category = bookCategoryName;
 
-    const response = await API.fetchBooks();
+    const data = await API.fetchBooks();
 
-    fetchData(response.data);
+    fetchData(data);
 
     const header = document.querySelector('.best_sellers_header');
 

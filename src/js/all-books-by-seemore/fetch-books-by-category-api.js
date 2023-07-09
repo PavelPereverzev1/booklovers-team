@@ -1,5 +1,3 @@
-import axios from 'axios';
-
 const BASE_URL = 'https://books-backend.p.goit.global/books/category';
 
 export default class BooksByCategoryApi {
@@ -10,8 +8,8 @@ export default class BooksByCategoryApi {
 
     const url = `${BASE_URL}?category=${encodedCategory}`;
 
-    const response = await axios.get(url);
+    const response = await fetch(url);
 
-    return response;
+    return response.json();
   }
 }
