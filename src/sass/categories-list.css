@@ -28,7 +28,7 @@
 .categories-list {
     display: flex;
     flex-direction: column;
-    gap: 32px;
+    gap: 24px;
 
    
 }
@@ -36,23 +36,22 @@
 
 
 .categories-list-item {
-    color:#11111199;
+    /* color:#11111199; */
     font-size: 16px;
     font-style: normal;
     font-weight: 400;
-    line-height: 0.8 ;
     letter-spacing: -0.32px;
 
 }
 
 .categories-list-item:hover {
-    color:#4F2EE8 ;
+    /* color:#4F2EE8 ; */
     text-transform: uppercase;
     font-weight: 700px;
 }
 
 .categories-list-item-selected {
-    color:#4F2EE8 ;
+    /* color:#4F2EE8 ; */
     text-transform: uppercase;
     font-weight: 700px;
 }
@@ -65,6 +64,12 @@
 
     .categories-list-box {
         height:472px ;
+    }
+
+    .categories-list-item {
+        font-size: 18px;
+        line-height: 1.33;
+        letter-spacing: -0.36px;
     }
 }
 
