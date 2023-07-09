@@ -1,12 +1,14 @@
-import axios from 'axios';
 const list = document.querySelector('.best_sellers_list');
 
 async function getTopBooks() {
   const url = `https://books-backend.p.goit.global/books/top-books`;
 
   try {
-    const response = await axios.get(url);
-    const data = response.data;
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error('Request failed');
+    }
+    const data = await response.json();
     return data;
   } catch (error) {
     console.warn('Error:', error);
@@ -31,10 +33,10 @@ async function fetchData() {
       for (const genre of genres) {
         let li_insert_item = '';
         for (const book of genre.books) {
-          li_insert_item += `<li><a href = "#">
+          li_insert_item += `<li><a href="#">
               <img src="${
                 book.book_image
-              }" alt="" loading="lazy" class = "bestSellers_image_place" />
+              }" alt="" loading="lazy" class="bestSellers_image_place" />
               <p class="name_of_the_book">${truncateString(book.title)}</p>
               <p class="writer_name">${truncateString(book.author)}</p></a>
             </li>`;
