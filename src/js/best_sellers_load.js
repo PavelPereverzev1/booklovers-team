@@ -17,8 +17,12 @@ async function getTopBooks() {
 }
 
 function truncateString(str) {
-  if (str.length > 20) {
-    return str.substring(0, 15) + '...';
+  if (window.innerWidth > 767 && window.innerWidth < 1440 && str.length > 22) {
+    return str.substring(0, 20) + '...';
+  }
+
+  if (window.innerWidth > 1440 && str.length > 20) {
+    return str.substring(0, 18) + '...';
   }
   return str;
 }
@@ -48,7 +52,7 @@ async function fetchData() {
               ${li_insert_item}
             </ul>
              <div class="btn_see_more_div">
-            <button class="see_more_btn" data-category="${genre.list_name}">see more</button>
+            <button class="see_more_btn" data-category="${genre.list_name}" type="button">see more</button>
           </div>
           </div>
           </li>`;
