@@ -44,13 +44,13 @@ async function getBookById(bookId) {
     <div class="shops-container">
 
         <a class="modal-shops-images" href="${data.buy_links[0].url}" target="_blank">
-            <img class="modal-image-amazon" src="./images/amazon.jpg" alt="Amazon shop">
+            <img class="modal-image-amazon" src="../images/amazon.jpg" alt="Amazon shop">
             </a>
             <a class="modal-shops-images" href="${data.buy_links[1].url}" target="_blank">
-                <img class="modal-image-apple" src="./images/apple-book.jpg" alt="Apple shop">
+                <img class="modal-image-apple" src="../images/apple-book.jpg" alt="Apple shop">
         </a>
         <a class="modal-shops-images" href="${data.buy_links[2].url}" target="_blank">
-            <img class="modal-image-bookshop" src="./images/book-shop.jpg" alt="Bookshop">
+            <img class="modal-image-bookshop" src="../images/book-shop.jpg" alt="Bookshop">
         </a>
 
     </div>
