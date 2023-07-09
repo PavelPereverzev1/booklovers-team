@@ -1,4 +1,4 @@
-import './js/spinner';
+import './js/spinner/spinner';
 import './js/ukr-sprt/ukr-sprt-slider';
 import './js/best_sellers_load';
 import './js/category-list';
