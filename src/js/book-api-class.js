@@ -30,9 +30,11 @@ export default class bookAPI {
 
         const markup = listCategories.map((data) => {
             return `<li class='categories-list-item'>${data.list_name}</li>`;
-        }).join('');
+        });
+        
+        markup.unshift("<li class='categories-list-item'>All Categories</li>");
 
-        targetEl.innerHTML = markup;
+        targetEl.innerHTML = markup.join('');
     }
 
     async getAllBookInCategory() {
