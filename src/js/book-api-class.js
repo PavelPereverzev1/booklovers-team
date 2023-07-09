@@ -29,10 +29,12 @@ export default class bookAPI {
             }
 
         const markup = listCategories.map((data) => {
-            return `<li class='categories-item'>${data.list_name}</li>`;
-        }).join('');
+            return `<li class='categories-list-item'>${data.list_name}</li>`;
+        });
+        
+        markup.unshift("<li class='categories-list-item'>All Categories</li>");
 
-        targetEl.innerHTML = markup;
+        targetEl.innerHTML = markup.join('');
     }
 
     async getAllBookInCategory() {
@@ -41,7 +43,18 @@ export default class bookAPI {
         listCategory.addEventListener("click", handleListCategory);
 
         async function handleListCategory (listElement) {
-            const categoryName = listElement.target.textContent;
+            const targetEl = listElement.target;
+            
+            const allItems = targetEl.parentNode.childNodes;
+            allItems.forEach((item) => {
+                if (item.classList.contains("categories-list-item-selected")) {
+                    item.classList.remove("categories-list-item-selected");
+                }
+            });
+
+            targetEl.classList.add("categories-list-item-selected");
+
+            const categoryName = targetEl.textContent;
             let categories = '';
             try {
                 const response = await fetch(`https://books-backend.p.goit.global/books/category?category=${categoryName}`);
