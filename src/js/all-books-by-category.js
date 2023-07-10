@@ -1,12 +1,12 @@
 import bookAPI from './book-api-class';
 import renderMarkupByData from './render-markup-books-by-data';
-import { slawSpinner } from './spinner/spinner';
+import { activeSpinner } from './spinner/spinner';
 
 const API = new bookAPI();
 
 async function onSeeMoreBtnClick(e) {
   try {
-    slawSpinner();
+    activeSpinner();
 
     const bookCategoryName = e.target.dataset.category;
 
