@@ -8,6 +8,6 @@ import './js/all-books-by-category';
 import './js/theme-switcher';
 // import './js/all-books-by-seemore/fetch-books-by-category-api';
 // import './js/all-books-by-seemore/all-books-by-category';
-import './js/shopping-list';
+import './js/handle-shopping-list-modal';
 import './js/theme-switcher';
 import './js/modal';
