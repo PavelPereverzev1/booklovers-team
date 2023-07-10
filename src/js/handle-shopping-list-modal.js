@@ -5,7 +5,7 @@ import bookAPI from './book-api-class';
 
 const NAME_STORAGE = 'shopping-list';
 const api = new bookAPI();
-const id = '643282b1e85766588626a082';
+let currentBookId = '';
 
 const addBtn = document.querySelector('.modal-add-btn');
 addBtn.addEventListener('click', controlShoppingList);
@@ -13,12 +13,11 @@ addBtn.addEventListener('click', controlShoppingList);
 async function controlShoppingList() {
   if (!load(NAME_STORAGE)) save(NAME_STORAGE, []);
 
-  const id = getId();
   const shoppingList = load(NAME_STORAGE);
-  const currentBook = await api.getBook(id);
+  const currentBook = await api.getBook(currentBookId);
 
-  if (shoppingList.some(book => book._id === id)) {
-    removeBookFromStorage(id);
+  if (shoppingList.some(book => book._id === currentBookId)) {
+    removeBookFromStorage(currentBookId);
     //   replaceButtonWithAdd();
     return;
   }
@@ -29,8 +28,9 @@ async function controlShoppingList() {
 
 /* ---------------------------------- */
 
-function getId() {
-  return id;
+export function saveCurrentBookId(bookId) {
+  currentBookId = bookId;
+  console.log(currentBookId);
 }
 
 export function saveBookToStorage(book) {
