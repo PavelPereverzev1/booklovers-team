@@ -34,21 +34,21 @@ function handleMobileMenu() {
 
 function openMobileMenu() {
   if (load('user')) {
-    removeClass(refs.mobileMenuContainer, 'visually-hidden');
+    removeClass(refs.mobileMenuContainer, 'mobile-menu_is-hidden');
     addClass(refs.mobileMenuUser, 'open');
     return;
   }
-  removeClass(refs.mobileMenuContainer, 'visually-hidden');
+  removeClass(refs.mobileMenuContainer, 'mobile-menu_is-hidden');
   addClass(refs.mobileMenuGuest, 'open');
 }
 
 function closeMobileMenu() {
   if (load('user')) {
-    addClass(refs.mobileMenuContainer, 'visually-hidden');
+    addClass(refs.mobileMenuContainer, 'mobile-menu_is-hidden');
     removeClass(refs.mobileMenuUser, 'open');
     return;
   }
-  addClass(refs.mobileMenuContainer, 'visually-hidden');
+  addClass(refs.mobileMenuContainer, 'mobile-menu_is-hidden');
   removeClass(refs.mobileMenuGuest, 'open');
 }
 
