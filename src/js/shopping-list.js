@@ -1,3 +1,5 @@
+// Author: YURII CORSSA
+
 import { save, load } from './storage';
 import bookAPI from './book-api-class';
 
@@ -31,13 +33,13 @@ function getId() {
   return id;
 }
 
-function saveBookToStorage(book) {
+export function saveBookToStorage(book) {
   const booksInShoppingList = load(NAME_STORAGE);
   booksInShoppingList.push(book);
   save(NAME_STORAGE, booksInShoppingList);
 }
 
-function removeBookFromStorage(id) {
+export function removeBookFromStorage(id) {
   const booksInShoppingList = load(NAME_STORAGE);
   const indexBook = booksInShoppingList.findIndex(book => book._id === id);
   booksInShoppingList.splice(indexBook, 1);
