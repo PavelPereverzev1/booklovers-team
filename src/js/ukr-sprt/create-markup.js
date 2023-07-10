@@ -1,3 +1,4 @@
+// author Pereverzev Pavel
 import fondsData from './ukr-sprt-data';
 
 

@@ -1,3 +1,4 @@
+// author Pereverzev Pavel
 import Swiper from 'swiper';
 import { Navigation } from 'swiper/modules';
 import 'swiper/swiper.min.css';

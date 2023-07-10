@@ -1,3 +1,4 @@
+// author Pereverzev Pavel
 const fondsData = [
     {
       title: 'Save the Children',
