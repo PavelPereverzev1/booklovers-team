@@ -1,3 +1,5 @@
+// Author: YURII CORSSA
+
 export const save = (key, value) => {
   try {
     const serializedState = JSON.stringify(value);
