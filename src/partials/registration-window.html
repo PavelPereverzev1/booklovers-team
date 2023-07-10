@@ -1,5 +1,10 @@
-<div class="backdrop-registration"></div>
-<div class="modal-registration">
+<div class="backdrop-registration active"></div>
+<div class="modal-registration active">
+  <button type="button" class="modal-registration_close_btn">
+    <svg class="modal-registration_close_icon">
+      <use href="./images/icons.svg#icon-x-close"></use>
+    </svg>
+  </button>
   <form name="signup_form" class="signup_form">
     <input
       type="text"
@@ -7,18 +12,34 @@
       class="signup_input name"
       placeholder="name"
     />
-    <input
-      type="email"
-      name="email"
-      class="signup_input email"
-      placeholder="email"
-    />
-    <input
-      type="password"
-      name="pwd"
-      class="signup_input pwd"
-      placeholder="password"
-    />
+
+    <div class="input_wrapper">
+      <input
+        type="email"
+        name="email"
+        class="signup_input email"
+        placeholder="email"
+      />
+      <svg class="modal-registration_icon">
+        <use href="./images/icons.svg#icon-mail-02"></use>
+      </svg>
+    </div>
+    <div class="input_wrapper">
+      <input
+        type="password"
+        name="pwd"
+        class="signup_input pwd"
+        placeholder="password"
+      />
+      <svg class="modal-registration_icon">
+        <use href="./images/icons.svg#icon-lock-02"></use>
+      </svg>
+    </div>
     <button type="submit" class="signup_btn">sign up</button>
   </form>
+  <div class="sign-up-in_links">
+    <button type="button" class="signup_btn_link active">sign up</button>
+    <button type="button" class="signin_btn_link">sign in</button>
+  </div>
+
 </div>
