@@ -38,10 +38,12 @@ export default async function fetchData() {
       for (const genre of genres) {
         let li_insert_item = '';
         for (const book of genre.books) {
-          li_insert_item += `<li><a href="#">
+          li_insert_item += `<li class="list_book_item"><a href="#"><div class="quick_view_card">
               <img src="${
                 book.book_image
-              }" alt="" loading="lazy" class="bestSellers_image_place" data-book-id=${book._id}/>
+              }" alt="" loading="lazy" class="bestSellers_image_place" data-book-id=${
+            book._id
+          }/></div>
               <p class="name_of_the_book">${truncateString(book.title)}</p>
               <p class="writer_name">${truncateString(book.author)}</p></a>
             </li>`;

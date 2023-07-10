@@ -172,3 +172,40 @@
   flex-direction: row-reverse;
   max-width: 996px;
 }
+
+.quick_view_card {
+  position: relative;
+  overflow: hidden;
+}
+
+.quick_view_card::after {
+  content: 'quick view ';
+  position: absolute;
+  bottom: 14;
+  left: 0;
+  display: flex;
+  height: 70px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  color: #111;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: -0.56px;
+  text-transform: uppercase;
+  border-radius: 0px 0px 8px 8px;
+  background: #eac645;
+  transform: translate(0, 100px);
+  opacity: 0;
+  transform: scale(0.4);
+  transition: opacity 600ms, transform 500ms;
+}
+
+.quick_view_card:hover::after {
+  opacity: 1;
+  transition: opacity 600ms, transform 500ms;
+  bottom: 14;
+  transform: scale(1);
+}
