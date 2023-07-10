@@ -2,9 +2,11 @@
 
 import { save, load } from './storage';
 import bookAPI from './book-api-class';
+import { nameBtn, remameBtn } from './modal';
 
-const NAME_STORAGE = 'shopping-list';
+export const NAME_STORAGE = 'shopping-list';
 const api = new bookAPI();
+
 let currentBookId = '';
 
 const addBtn = document.querySelector('.modal-add-btn');
@@ -18,19 +20,18 @@ async function controlShoppingList() {
 
   if (shoppingList.some(book => book._id === currentBookId)) {
     removeBookFromStorage(currentBookId);
-    //   replaceButtonWithAdd();
+    remameBtn(nameBtn.add);
     return;
   }
 
   saveBookToStorage(currentBook);
-  // replaceButtonWithRemove();
+  remameBtn(nameBtn.remove);
 }
 
 /* ---------------------------------- */
 
 export function saveCurrentBookId(bookId) {
   currentBookId = bookId;
-  console.log(currentBookId);
 }
 
 export function saveBookToStorage(book) {

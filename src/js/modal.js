@@ -1,11 +1,18 @@
 import amazonIcon from '../images/amazon.jpg';
 import appleBookIcon from '../images/apple-book.jpg';
 import bookshopIcon from '../images/book-shop.jpg';
-import { saveCurrentBookId } from './handle-shopping-list-modal';
+import { saveCurrentBookId, NAME_STORAGE } from './handle-shopping-list-modal';
+import { load } from './storage';
 
 const modalBackdrop = document.querySelector('.modal-backdrop');
 const closeBtn = document.querySelector('.modal-close-btn');
 const list = document.querySelector('.best_sellers_list');
+const addRemoveBtn = document.querySelector('.modal-add-btn');
+
+export const nameBtn = {
+  add: 'Add to shopping list',
+  remove: 'Remove from the shopping list',
+};
 
 async function getBookById(bookId) {
   const baseUrl = 'https://books-backend.p.goit.global/books';
@@ -32,6 +39,7 @@ async function handleListClick(event) {
     createModalMarkup(bookData);
     openModal();
     saveCurrentBookId(bookData._id);
+    handleBtn(bookData._id);
   }
 }
 
@@ -99,4 +107,18 @@ function removeEventListeners() {
   closeBtn.removeEventListener('click', handleCloseBtnClick);
   modalBackdrop.removeEventListener('click', handleModalBackdropClick);
   document.removeEventListener('keydown', handleKeyDown);
+}
+
+function handleBtn(bookId) {
+  const shoppingList = load(NAME_STORAGE);
+
+  if (shoppingList.some(book => book._id === bookId)) {
+    remameBtn(nameBtn.remove);
+    return;
+  }
+  remameBtn(nameBtn.add);
+}
+
+export function remameBtn(value) {
+  addRemoveBtn.textContent = value;
 }
