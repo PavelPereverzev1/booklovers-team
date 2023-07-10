@@ -1,22 +1,30 @@
-.mobile-menu_section {
-}
-
 .mobile-menu_container {
   position: fixed;
   z-index: 2;
+
   top: 50%;
-  left: 50%;
+  left: 100%;
+  transform: translateY(-50%);
 
   display: flex;
   flex-direction: column;
   overflow: hidden;
+  width: 100%;
   height: 100%;
-  transform: translate(-50%, -50%);
+  max-width: 380px;
   background: radial-gradient(
     189.32% 190.93% at 59.76% -23.42%,
     #4f2ee8 18.03%,
     #fff 100%
   );
+
+  transition: transform 0.3s ease-out, left 0.3s ease-out;
+}
+
+.mobile-menu_container.open {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
 }
 
 .mobile-menu_guest {
@@ -122,4 +130,17 @@
   //   background-color: antiquewhite;
   border-radius: 8px;
   background: lightgray 50% / cover no-repeat;
+}
+
+@media (min-width: 768px) {
+  .mobile-menu_container {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+  }
 }
