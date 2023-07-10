@@ -7,7 +7,7 @@ function addMarker() {
     shopListBtn.classList.remove('current');
     console.log(window.location.pathname)
 
-    if (window.location.pathname === '/index.html') {
+    if (window.location.pathname === './index.html') {
         homeBtn.classList.add('current');
     } else {
         shopListBtn.classList.add('current');
