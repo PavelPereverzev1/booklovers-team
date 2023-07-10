@@ -1,3 +1,7 @@
+import amazonIcon from "../images/amazon.jpg";
+import appleBookIcon from "../images/apple-book.jpg"
+import bookshopIcon from "../images/book-shop.jpg"
+
 const modalBackdrop = document.querySelector('.modal-backdrop');
 const closeBtn = document.querySelector('.modal-close-btn');
 const list = document.querySelector('.best_sellers_list');
@@ -44,13 +48,13 @@ async function getBookById(bookId) {
     <div class="shops-container">
 
         <a class="modal-shops-images" href="${data.buy_links[0].url}" target="_blank">
-            <img class="modal-image-amazon" src="../images/amazon.jpg" alt="Amazon shop">
+            <img class="modal-image-amazon" src="${amazonIcon}" alt="Amazon shop">
             </a>
             <a class="modal-shops-images" href="${data.buy_links[1].url}" target="_blank">
-                <img class="modal-image-apple" src="../images/apple-book.jpg" alt="Apple shop">
+                <img class="modal-image-apple" src="${appleBookIcon}" alt="Apple shop">
         </a>
         <a class="modal-shops-images" href="${data.buy_links[2].url}" target="_blank">
-            <img class="modal-image-bookshop" src="../images/book-shop.jpg" alt="Bookshop">
+            <img class="modal-image-bookshop" src="${bookshopIcon}" alt="Bookshop">
         </a>
 
     </div>
@@ -76,10 +80,12 @@ function handleKeyDown(event) {
 
 function openModal() {
     modalBackdrop.classList.remove('visually-hidden');
+    document.body.classList.add('no-scroll');
   };
   
   function closeModal() {
     modalBackdrop.classList.add('visually-hidden');
+    document.body.classList.remove('no-scroll');
   };
 
 list.addEventListener('click', handleListClick);

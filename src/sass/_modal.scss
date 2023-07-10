@@ -1,5 +1,9 @@
 // автор Богдан
 
+.no-scroll {
+    overflow: hidden;
+  }
+
 .modal-backdrop{
     width: 100%;
     height: 100%;
@@ -108,7 +112,7 @@ margin-bottom: 4px;
     margin-right: auto;
 }
 
-@media  screen and (min-width: 768px ) and (max-width: 1440px) {
+@media  screen and (min-width: 768px ) {
     .modal-image-book{
         max-width: 192px;
         min-height: 281px;
