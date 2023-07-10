@@ -1,7 +1,8 @@
+// автор Богдан
 
-a{
-    text-decoration: none;
-}
+.no-scroll {
+    overflow: hidden;
+  }
 
 .modal-backdrop{
     width: 100%;
@@ -33,6 +34,7 @@ a{
     padding-bottom: 40px;
     padding-left: 24px;
     padding-right: 24px;
+    cursor: auto;
 }
 
 @media  screen and (min-width: 768px ) {
@@ -48,7 +50,7 @@ a{
 .modal-close-btn{
     width: 24px;
     height: 24px;
-   background: inherit;
+   background: transparent;
    border: none;
    cursor: pointer;
   position: sticky;
@@ -110,7 +112,7 @@ margin-bottom: 4px;
     margin-right: auto;
 }
 
-@media  screen and (min-width: 768px ) and (max-width: 1440px) {
+@media  screen and (min-width: 768px ) {
     .modal-image-book{
         max-width: 192px;
         min-height: 281px;
@@ -231,4 +233,3 @@ margin-bottom: 4px;
     letter-spacing: -.01em;
     }
 }
-

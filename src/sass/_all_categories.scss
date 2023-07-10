@@ -83,6 +83,7 @@
 }
 .top_genre_cards_list {
   margin-bottom: 8px;
+  flex-wrap: wrap;
   @media (max-width: 767px) {
     li:not(:first-child) {
       display: none;
@@ -103,7 +104,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 24px;
+    gap: 22px;
     margin-bottom: 32px;
   }
 }

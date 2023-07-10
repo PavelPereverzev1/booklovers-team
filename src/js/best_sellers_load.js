@@ -1,3 +1,5 @@
+import createButtonsEvent from './all-books-by-category';
+
 const list = document.querySelector('.best_sellers_list');
 
 async function getTopBooks() {
@@ -26,7 +28,7 @@ function truncateString(str) {
   }
   return str;
 }
-async function fetchData() {
+export default async function fetchData() {
   try {
     let li_Item = '';
     const genres = await getTopBooks();
@@ -39,7 +41,7 @@ async function fetchData() {
           li_insert_item += `<li><a href="#">
               <img src="${
                 book.book_image
-              }" alt="" loading="lazy" class="bestSellers_image_place" />
+              }" alt="" loading="lazy" class="bestSellers_image_place" data-book-id=${book._id}/>
               <p class="name_of_the_book">${truncateString(book.title)}</p>
               <p class="writer_name">${truncateString(book.author)}</p></a>
             </li>`;
@@ -58,7 +60,11 @@ async function fetchData() {
           </li>`;
       }
     }
+
+    list.innerHTML = '';
     list.insertAdjacentHTML('beforeend', li_Item);
+
+    createButtonsEvent();
   } catch (error) {
     console.error('Error:', error);
   }

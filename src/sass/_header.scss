@@ -1,3 +1,5 @@
+
+
 .header {
   position: relative;
   z-index: 3;
@@ -120,12 +122,14 @@
   gap: 14px;
 }
 .nav-link {
+
   font-family: 'DM sans';
   font-size: 18px;
   text-transform: uppercase;
   font-weight: 700;
   display: flex;
   align-items: center;
+
 }
 .current {
   background-color: #eac645;
@@ -159,3 +163,55 @@
 //     fill: #ffffff;
 //     stroke: #ffffff;
 // }
+
+.light-theme {
+    background-color: #ffffff;
+    color: #000000;
+  }
+  
+  /* Стилі для темної теми */
+  .dark-theme {
+    background-color: #1c1c1c;
+    color: #ffffff;
+  }
+  body {
+    background-color: var(--var-body-bg);
+}
+.header-sec {
+    border: var(--var-text-fc) 2px solid;
+    background-color: var(--var-body-bg);
+    border-bottom-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+}
+.burger-ico {
+    stroke: var(--var-ico-brg);
+}
+.logo {
+    color: var(--var-logo-clr);
+}
+.btn-icon {
+    fill: var(--var-logo-clr);
+}
+.nav-link {
+    color: var(--var-text-fc);
+}
+.current {
+    color: var(--var-text-fc);
+}
+.nav-link {
+color: var(--var-text-fc);
+}
+
+/*categories list style*/
+.categories-list-item {
+    color: var(--var-text-fc);
+}
+
+.categories-list-item:hover {
+    color: var(--var-hover-fc) ;
+}
+
+.categories-list-item-selected {
+    color: var(--var-hover-fc) ;
+}
+
