@@ -1,3 +1,5 @@
+import { hideSpinner } from './spinner/spinner';
+
 const list = document.querySelector('.best_sellers_list');
 
 function truncateString(str) {
@@ -45,11 +47,13 @@ export function renderCategoryHeader(category = 'Best Sellers Books') {
 
   const newHeader = headerWords.map((word, index) => {
     if (index === headerWords.length - 1) {
-      `return <span class="h1_span_color">${word}</span>`;
+      return `<span class="h1_span_color">${word}</span>`;
     }
 
     return word;
   });
 
   header.innerHTML = newHeader.join(' ');
+
+  hideSpinner();
 }

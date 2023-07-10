@@ -3,6 +3,9 @@ import renderMarkupByData, {
   renderCategoryHeader,
 } from './render-markup-books-by-data';
 import fetchData from './best_sellers_load';
+// Додав ще імпорт для спіннера from Yaroslav Peleshko
+import { slawSpinner } from './spinner/spinner';
+// ==================================
 
 export default class bookAPI {
   baseURl = 'https://books-backend.p.goit.global/books/';
@@ -34,7 +37,11 @@ export default class bookAPI {
       return `<li class="categories-list-item">${data.list_name}</li>`;
     });
 
-    markup.unshift("<li class='categories-list-item'>All Categories</li>");
+    // Додав ще class categories-list-item-selected на All Categories, щоб ця категорія зразу була відмічена при завантаженні сторінки from Yaroslav Peleshko
+    markup.unshift(
+      "<li class='categories-list-item categories-list-item-selected'>All Categories</li>"
+    );
+    // =================================
 
     targetEl.innerHTML = markup.join('');
   }
@@ -64,6 +71,14 @@ export default class bookAPI {
     const listCategory = document.querySelector(this.listEl);
 
     listCategory.addEventListener('click', event => {
+      // Додав щоб івент спрацьовував тільки на лішки, а також функцію для спіннера from Yaroslav Peleshko
+      if (!(event.target.nodeName === 'LI')) {
+        return;
+      }
+
+      slawSpinner();
+      // ===============================
+
       const categoryName = this.getCategoryName(event);
 
       const categories = this.getAllBookInCategory(categoryName);
@@ -95,7 +110,6 @@ export default class bookAPI {
 
     const categoryName = targetEl.textContent;
 
-    console.log(categoryName);
     return categoryName;
   }
 

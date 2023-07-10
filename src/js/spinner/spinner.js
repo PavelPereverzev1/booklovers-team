@@ -10,7 +10,7 @@ window.addEventListener('load', hideSpinner);
 //прослухати сабміт sing in activeSpinner
 
 // приховуєм спінер при завантаженій сторінці
-function hideSpinner() {
+export function hideSpinner() {
   setTimeout(() => {
     spinnerContainer.style.display = 'none';
   }, 3000);
