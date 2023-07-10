@@ -66,7 +66,7 @@ export default class bookAPI {
   }
 
   async renderAllBooksInCategory() {
-    const contentBox = document.querySelector('.best_sellers_div');
+    const contentBox = document.querySelector('.js-category_div');
 
     const listCategory = document.querySelector(this.listEl);
 

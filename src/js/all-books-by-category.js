@@ -20,7 +20,7 @@ async function onSeeMoreBtnClick(e) {
 }
 
 export default function createButtonsEvent() {
-  const seeMoreBtns = document.querySelectorAll('.see_more_btn');
+  const seeMoreBtns = document.querySelectorAll('.js_see_more_btn');
 
   if (seeMoreBtns.length > 0) {
     seeMoreBtns.forEach(btn => {
