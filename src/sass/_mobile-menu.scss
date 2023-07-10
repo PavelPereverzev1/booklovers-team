@@ -1,0 +1,125 @@
+.mobile-menu_section {
+}
+
+.mobile-menu_container {
+  position: fixed;
+  z-index: 2;
+  top: 50%;
+  left: 50%;
+
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  height: 100%;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(
+    189.32% 190.93% at 59.76% -23.42%,
+    #4f2ee8 18.03%,
+    #fff 100%
+  );
+}
+
+.mobile-menu_guest {
+  display: flex;
+  padding-top: 104px;
+}
+
+.mobile-menu_user {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  align-items: start;
+  padding-top: 84px;
+  padding-bottom: 20px;
+}
+
+.mobile-menu_btn {
+  display: flex;
+  justify-content: space-between;
+  flex-shrink: 0;
+
+  border-radius: 18px;
+  border: 1.5px solid #111;
+}
+
+.mobile-menu_btn.log-in {
+  width: 184px;
+  height: 48px;
+  padding: 14px;
+  background: #4f2ee8;
+}
+
+.mobile-menu_btn.log-out {
+  gap: 4px;
+  padding: 14px 24px;
+  background: #fff;
+}
+
+.mobile-menu_btn span {
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 18px;
+  letter-spacing: -0.56px;
+}
+
+.mobile-menu_btn.log-in span {
+  color: #fff;
+}
+
+.mobile-menu_btn.log-out span {
+  color: #111;
+}
+
+.mobile-menu_icon_btn {
+  stroke: #eac645;
+  width: 20px;
+  height: 20px;
+}
+
+.user_wrapper {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.user_avatar {
+  width: 37px;
+  height: 37px;
+  border-radius: 37px;
+  background: lightgray 50% / cover no-repeat;
+}
+
+.user_name {
+  color: #fff;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: normal;
+  letter-spacing: -0.44px;
+}
+
+.background-gallery {
+  position: absolute;
+  top: 90%;
+  left: 55%;
+  z-index: -1;
+  width: 450.001px;
+  height: 439px;
+  transform: translate(-50%, -50%) rotate(-15deg);
+  flex-shrink: 0;
+}
+
+.background-gallery_list {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 30px;
+  row-gap: 20px;
+}
+
+.background-gallery_list_item {
+  width: 90px;
+  height: 130px;
+  //   background-color: antiquewhite;
+  border-radius: 8px;
+  background: lightgray 50% / cover no-repeat;
+}
