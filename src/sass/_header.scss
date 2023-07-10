@@ -85,6 +85,7 @@
   gap: 24px;
   margin-left: 40px;
 }
+
 .nav {
   display: flex;
 }
@@ -130,6 +131,16 @@
   display: flex;
   align-items: center;
 
+}
+.nav-link:hover {
+  border: 2px solid #eac645;
+  border-radius: 36px;
+  padding: 7px 16px;
+}
+.nav-link:focus {
+  border: 2px solid #eac645;
+  border-radius: 36px;
+  padding: 7px 16px;
 }
 .current {
   background-color: #eac645;
