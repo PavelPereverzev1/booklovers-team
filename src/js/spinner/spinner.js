@@ -1,3 +1,4 @@
+//author Stanislav
 //імпорт константа кнопки з all categories
 //імпорт константа кнопки з sing in/sing up
 
@@ -15,14 +16,14 @@ function hideSpinner() {
   }, 3000);
 }
 // завантаження спінера при сабміті на кнопку у формі sing in/sing up
-function activeSpinner() {
+export function activeSpinner() {
   spinnerContainer.style.display = 'flex';
   setTimeout(() => {
     spinnerContainer.style.display = 'none';
   }, 1000);
 }
 // завантаження спінера при кліку на кнопку all categories
-function slawSpinner() {
+export function slawSpinner() {
   spinnerContainer.style.display = 'flex';
   setTimeout(() => {
     spinnerContainer.style.display = 'none';

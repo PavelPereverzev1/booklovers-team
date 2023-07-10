@@ -1,4 +1,8 @@
 import axios from 'axios';
+import renderMarkupByData, {
+  renderCategoryHeader,
+} from './render-markup-books-by-data';
+import fetchData from './best_sellers_load';
 
 export default class bookAPI {
   baseURl = 'https://books-backend.p.goit.global/books/';
@@ -27,7 +31,7 @@ export default class bookAPI {
     }
 
     const markup = listCategories.map(data => {
-      return `<li class='categories-list-item'>${data.list_name}</li>`;
+      return `<li class="categories-list-item">${data.list_name}</li>`;
     });
 
     markup.unshift("<li class='categories-list-item'>All Categories</li>");
@@ -63,7 +67,16 @@ export default class bookAPI {
       const categoryName = this.getCategoryName(event);
 
       const categories = this.getAllBookInCategory(categoryName);
-      categories.then(res => console.log(res)).catch(e => console.error(e));
+      categories
+        .then(async res => {
+          if (!(event.target.textContent === 'All Categories')) {
+            renderMarkupByData(res, categoryName);
+          } else {
+            await fetchData();
+            renderCategoryHeader();
+          }
+        })
+        .catch(e => console.error(e));
     });
   }
 
@@ -101,5 +114,35 @@ export default class bookAPI {
       console.warn('Error:', error);
       throw error;
     }
+  }
+
+  filterByCategory(category) {
+    const firstCategoriesItem =
+      document.querySelector('.categories-list').firstElementChild;
+    const categoriesItems = Array.from(
+      document.querySelector('.categories-list').children
+    );
+
+    const filteredItemByCategory = categoriesItems.find(
+      item => item.textContent === category
+    );
+
+    filteredItemByCategory.classList.add('categories-list-item-selected');
+
+    if (
+      firstCategoriesItem.classList.contains('categories-list-item-selected')
+    ) {
+      firstCategoriesItem.classList.remove('categories-list-item-selected');
+    }
+  }
+
+  async getBooksBySeeMore(category) {
+    const encodedCategory = encodeURIComponent(category);
+
+    const url = `${this.baseURl}category?category=${encodedCategory}`;
+
+    const response = await fetch(url);
+
+    return response.json();
   }
 }
