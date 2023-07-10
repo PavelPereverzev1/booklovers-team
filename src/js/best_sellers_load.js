@@ -1,3 +1,5 @@
+import createButtonsEvent from './all-books-by-category';
+
 const list = document.querySelector('.best_sellers_list');
 
 async function getTopBooks() {
@@ -26,7 +28,7 @@ function truncateString(str) {
   }
   return str;
 }
-async function fetchData() {
+export default async function fetchData() {
   try {
     let li_Item = '';
     const genres = await getTopBooks();
@@ -58,7 +60,11 @@ async function fetchData() {
           </li>`;
       }
     }
+
+    list.innerHTML = '';
     list.insertAdjacentHTML('beforeend', li_Item);
+
+    createButtonsEvent();
   } catch (error) {
     console.error('Error:', error);
   }
