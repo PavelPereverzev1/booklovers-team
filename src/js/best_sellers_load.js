@@ -41,7 +41,7 @@ export default async function fetchData() {
           li_insert_item += `<li><a href="#">
               <img src="${
                 book.book_image
-              }" alt="" loading="lazy" class="bestSellers_image_place" />
+              }" alt="" loading="lazy" class="bestSellers_image_place" data-book-id=${book._id}/>
               <p class="name_of_the_book">${truncateString(book.title)}</p>
               <p class="writer_name">${truncateString(book.author)}</p></a>
             </li>`;
