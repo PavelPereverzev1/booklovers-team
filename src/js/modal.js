@@ -58,10 +58,10 @@ async function handleListClick(event) {
 function createModalMarkup(data) {
   const modalContent = document.querySelector('.modal-flex-container');
   modalContent.innerHTML = `
-    <img class="modal-image-book" src="${data.book_image}" alt="Book cover">
-
+   
     <div class="modal-flex-content">  
-
+    <img class="modal-image-book" src="${data.book_image}" alt="Book cover">
+    <div class="modal-flex-div">  
     <h2 class="modal-book-name">${data.title}</h2>
     <p class="modal-author">${data.author}</p>
     <p class="modal-description">${data.description}</p>
@@ -77,7 +77,7 @@ function createModalMarkup(data) {
         <a class="modal-shops-images" href="${data.buy_links[2].url}" target="_blank">
             <img class="modal-image-bookshop" src="${bookshopIcon}" alt="Bookshop">
         </a>
-
+        </div>
     </div>
 </div>
     `;
