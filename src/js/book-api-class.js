@@ -158,7 +158,7 @@ export default class bookAPI {
             
             const booksList = books.map((book) => {
           
-              return `<li class="list_book_item" data-book-id=${book._id} >
+              return `<li class="list_book_item" data-bookid=${book._id} >
                       <img src="${book.book_image}" alt="" loading="lazy" class="category_image_place" />
                       <p class="name_of_the_book">${this.truncateStr(book.title)}</p>
                       <p class="writer_name">${this.truncateStr(book.author)}</p>
@@ -192,7 +192,7 @@ export default class bookAPI {
         } else if (noda.classList.contains('js-category_div')) {
           const bookItemMarkup = books.map((book) => {
           
-          return `<li class="list_book_item" data-book-id=${book._id} >
+          return `<li class="list_book_item" data-bookid=${book._id} >
                   <img src="${book.book_image}" alt="" loading="lazy" class="category_image_place" />
                   <p class="name_of_the_book">${this.truncateStr(book.title)}</p>
                   <p class="writer_name">${this.truncateStr(book.author)}</p>
