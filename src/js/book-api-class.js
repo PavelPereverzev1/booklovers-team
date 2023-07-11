@@ -78,7 +78,7 @@ export default class bookAPI {
 
   async renderAllBooksInCategory() {
     const contentBox = document.querySelector('.category_section');
-    console.log(contentBox);
+    
     const listCategory = document.querySelector(this.listEl);
 
     listCategory.addEventListener('click', event => {

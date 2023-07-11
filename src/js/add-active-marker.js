@@ -5,7 +5,7 @@ function addMarker() {
     // Очищуємо класи усіх кнопок
     homeBtn.classList.remove('current');
     shopListBtn.classList.remove('current');
-    console.log(window.location.pathname);
+    
   const pathname = window.location.pathname;
 
     if (pathname.includes('index')) {
