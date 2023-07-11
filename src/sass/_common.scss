@@ -34,10 +34,11 @@
 }
 
 /*========VARIABLES========*/
-// $clr-background-light: #f6f6f6;
+$clr-background-light: #f6f6f6;
 $clr-background-dark: #202024;
 $clr-brand:#4F2EE8;
 $clr-accent: #EAC645;
+$clr-text-black: #111;
 
 :root {
     --var-body-bg: #F6F6F6;
@@ -63,6 +64,7 @@ $clr-accent: #EAC645;
 body {
   margin: 0;
   font-family: 'DM Sans', sans-serif;
+  background-color: var(--var-body-bg);
 }
 button {
   padding: 0;
