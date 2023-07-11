@@ -11,3 +11,4 @@ import './js/theme-switcher';
 import './js/handle-shopping-list-modal';
 import './js/theme-switcher';
 import './js/modal';
+import './js/mobile-menu';
