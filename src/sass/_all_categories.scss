@@ -209,3 +209,35 @@
   bottom: 14;
   transform: scale(1);
 }
+
+
+.btn_scroll_up-container{
+  @media(max-width:768){
+  position: relative;
+  }
+}
+.btn_scroll_up{
+  @media(max-width:768){
+    position: absolute;
+   bottom:80;
+   right: 7;
+  width:54px;
+  height:54px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 5px #4F2EE84D;
+background-color:#4F2EE8;
+    }
+
+}
+.icon-scroll{
+  @media(max-width:768){
+    width:24px;
+    height:24px;
+    fill:white;
+    }
+    @media(min-width: 769px){
+      display: none;
+    }
+
+}
+

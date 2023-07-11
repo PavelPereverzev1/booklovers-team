@@ -1,0 +1,18 @@
+export const scrollButton = document.getElementById("scroll-up-btn")
+
+scrollButton.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+    });
+});
+
+function handleScroll() {
+    if (window.scrollY > 500) {
+        scrollButton.style.display = 'block';
+    }
+   
+}
+
+
+window.addEventListener('scroll', handleScroll);

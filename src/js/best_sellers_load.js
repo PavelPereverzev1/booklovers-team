@@ -55,9 +55,11 @@ export default async function fetchData() {
              <ul class="top_genre_cards_list">
               ${li_insert_item}
             </ul>
+            
              <div class="btn_see_more_div">
             <button class="see_more_btn" data-category="${genre.list_name}" type="button">see more</button>
           </div>
+          
           </div>
           </li>`;
       }
