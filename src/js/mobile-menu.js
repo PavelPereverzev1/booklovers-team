@@ -2,6 +2,7 @@ import { save, load } from './storage';
 
 const refs = {
   burgerBtn: document.querySelector('.burger-btn'),
+  closeBtn: document.querySelector('.close-btn'),
   mobileMenuContainer: document.querySelector('.mobile-menu_container'),
   mobileMenuGuest: document.querySelector('.mobile-menu_guest'),
   mobileMenuUser: document.querySelector('.mobile-menu_user'),
@@ -9,6 +10,7 @@ const refs = {
 };
 
 refs.burgerBtn.addEventListener('click', handleMobileMenu);
+refs.closeBtn.addEventListener('click', handleMobileMenu);
 
 const user = {
   name: 'userName',
@@ -19,14 +21,20 @@ save('user', user);
 
 function handleMobileMenu() {
   if (menuStatus === 'close') {
-    console.log('close');
     openMobileMenu();
+    refs.closeBtn.style.display = 'flex';
+    refs.burgerBtn.style.display = 'none';
+    refs.burgerBtn.classList.add('hide');
+    refs.closeBtn.classList.add('show');
     menuStatus = 'open';
     return;
   }
   if (menuStatus === 'open') {
-    console.log('open');
     closeMobileMenu();
+    refs.closeBtn.style.display = 'none';
+    refs.burgerBtn.style.display = 'flex';
+    refs.burgerBtn.classList.add('show');
+    refs.closeBtn.classList.add('hide');
     menuStatus = 'close';
     return;
   }
