@@ -35,7 +35,7 @@
 }
 
 .category_header {
-  color: #111;
+  color:var(--var-text-fc);
   font-size: 32px;
   font-style: normal;
   font-weight: 700;
@@ -109,7 +109,7 @@
   }
 }
 .name_of_the_book {
-  color: #111;
+  color: var(--var-text-fc);
   font-size: 16px;
   font-style: normal;
   font-weight: 700;
@@ -149,7 +149,7 @@
   border-radius: 40px;
   border: 2px solid #4f2ee8;
 
-  color: #111;
+  color: var(--var-text-fc);
 
   font-size: 14px;
   font-style: normal;
