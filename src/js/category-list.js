@@ -3,15 +3,13 @@ import bookAPI from './book-api-class';
 const api = new bookAPI();
 
 api.renderAllCategoriesList(".categories-list");
-api.renderAllBooksInCategory();
-
 
 async function loadHomepage(){
     const list = document.querySelector('.all_categories_section');
     const topBooks = await api.getTopBooks();
-    
     api.renderHomePage(list, topBooks);
 }
+loadHomepage();
 
 function hideBook() {
     let screenSize = window.innerWidth;
@@ -30,5 +28,5 @@ function hideBook() {
 }
 
 hideBook();
-loadHomepage();
+
 window.addEventListener('resize', hideBook);
