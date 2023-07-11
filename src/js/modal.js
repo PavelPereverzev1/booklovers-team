@@ -9,6 +9,8 @@ const closeBtn = document.querySelector('.modal-close-btn');
 const list = document.querySelector(".js-category_div");
 const addRemoveBtn = document.querySelector('.modal-add-btn');
 
+
+
 export const nameBtn = {
   add: 'Add to shopping list',
   remove: 'Remove from the shopping list',
@@ -101,9 +103,18 @@ function closeModal() {
   document.body.classList.remove('no-scroll');
 }
 
-list.addEventListener('click', handleListClick);
+if (list) {
+  list.addEventListener('click', handleListClick);
+}
+
+if(closeBtn){
 closeBtn.addEventListener('click', handleCloseBtnClick);
+}
+
+if(modalBackdrop){
 modalBackdrop.addEventListener('click', handleModalBackdropClick);
+}
+
 document.addEventListener('keydown', handleKeyDown);
 
 function removeEventListeners() {
