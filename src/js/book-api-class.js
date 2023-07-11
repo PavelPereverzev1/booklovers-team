@@ -208,7 +208,7 @@ export default class bookAPI {
                  </li>`;
             })
             .join('');
-          noda.innerHTML = `<ul class="genre_cards_list">
+          noda.innerHTML = `<ul class="genre_cards_list category">
           ${bookItemMarkup}
           </ul>`;
         }
