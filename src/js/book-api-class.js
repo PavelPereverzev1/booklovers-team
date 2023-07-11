@@ -4,7 +4,7 @@ import axios from 'axios';
 // } from './render-markup-books-by-data';
 // import fetchData from './best_sellers_load';
 // Додав ще імпорт для спіннера from Yaroslav Peleshko
-import { slawSpinner } from './spinner/spinner';
+import { activeSpinner } from './spinner/spinner';
 // ==================================
 
 export default class bookAPI {
@@ -77,8 +77,8 @@ export default class bookAPI {
   }
 
   async renderAllBooksInCategory() {
-    const contentBox = document.querySelector('.all_categories_section');
-    
+    const contentBox = document.querySelector('.category_section');
+    console.log(contentBox);
     const listCategory = document.querySelector(this.listEl);
 
     listCategory.addEventListener('click', event => {
@@ -87,7 +87,7 @@ export default class bookAPI {
         return;
       }
 
-      // slawSpinner();
+      activeSpinner();
       // ===============================
 
       const categoryName = this.getCategoryName(event);
@@ -152,21 +152,21 @@ export default class bookAPI {
       if (noda.nodeName !== "#text") {
         if (noda.nodeName === 'H1') {
           noda.innerHTML = this.prepareCategoryName();
-        } else if (noda.classList.contains('best_sellers_div')) {
+        } else if (noda.classList.contains('js-category_div')) {
           
           const markup = collections.map(({books, list_name}) =>{
             
             const booksList = books.map((book) => {
           
               return `<li class="list_book_item" data-book-id=${book._id} >
-                      <img src="${book.book_image}" alt="" loading="lazy" class="bestSellers_image_place" />
+                      <img src="${book.book_image}" alt="" loading="lazy" class="category_image_place" />
                       <p class="name_of_the_book">${this.truncateStr(book.title)}</p>
                       <p class="writer_name">${this.truncateStr(book.author)}</p>
                      </li>`;}).join('');
 
-            return `<li class="top_of_genres_div">
+            return `<li class="genre_div">
                         <p class="all_genres_list_header">${list_name}</p>
-                        <ul class="top_genre_cards_list">
+                        <ul class="genre_cards_list">
                          ${booksList}
                         </ul>
                         <div class="btn_see_more_div">
@@ -175,7 +175,7 @@ export default class bookAPI {
                     </li>`
           }).join('');
           
-          noda.innerHTML = `<ul class="best_sellers_list">
+          noda.innerHTML = `<ul class="js_category_list category_list">
           ${markup}
           </ul>`;
         }
@@ -189,16 +189,16 @@ export default class bookAPI {
       if (noda.nodeName !== "#text") {
         if (noda.nodeName === 'H1') {
           noda.innerHTML = this.prepareCategoryName(categoryName);
-        } else if (noda.classList.contains('best_sellers_div')) {
+        } else if (noda.classList.contains('js-category_div')) {
           const bookItemMarkup = books.map((book) => {
           
           return `<li class="list_book_item" data-book-id=${book._id} >
-                  <img src="${book.book_image}" alt="" loading="lazy" class="bestSellers_image_place" />
+                  <img src="${book.book_image}" alt="" loading="lazy" class="category_image_place" />
                   <p class="name_of_the_book">${this.truncateStr(book.title)}</p>
                   <p class="writer_name">${this.truncateStr(book.author)}</p>
                  </li>`; 
           }).join('');
-          noda.innerHTML = `<ul class="top_genre_cards_list">
+          noda.innerHTML = `<ul class="genre_cards_list">
           ${bookItemMarkup}
           </ul>`;
         }
@@ -266,7 +266,7 @@ export default class bookAPI {
 
   setSeeMoreBtnHandler () {
     const seeMoreBtns = document.querySelectorAll('.see_more_btn');
-    const contentBox = document.querySelector('.all_categories_section');
+    const contentBox = document.querySelector('.category_section');
     if (seeMoreBtns.length > 0) {
       seeMoreBtns.forEach(btn => {
         btn.addEventListener('click', (event) => {
