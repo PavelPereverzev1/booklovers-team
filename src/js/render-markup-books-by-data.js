@@ -1,61 +1,59 @@
-import { hideSpinner } from './spinner/spinner';
+// import { hideSpinner } from './spinner/spinner';
 
-const list = document.querySelector('.js_category_list');
+// const list = document.querySelector('.best_sellers_list');
 
-function truncateString(str) {
-  if (window.innerWidth > 767 && window.innerWidth < 1440 && str.length > 22) {
-    return str.substring(0, 20) + '...';
-  }
+// function truncateString(str) {
+//   if (window.innerWidth > 767 && window.innerWidth < 1440 && str.length > 22) {
+//     return str.substring(0, 20) + '...';
+//   }
 
-  if (window.innerWidth > 1440 && str.length > 20) {
-    return str.substring(0, 18) + '...';
-  }
-  return str;
-}
+//   if (window.innerWidth > 1440 && str.length > 20) {
+//     return str.substring(0, 18) + '...';
+//   }
+//   return str;
+// }
 
-export default function renderMarkupByData(books, category) {
-  let li_Item = '';
-  let li_insert_item = '';
+// export default function renderMarkupByData(books, category) {
+//   let li_Item = '';
+//   let li_insert_item = '';
 
-  list.innerHTML = '';
+//   list.innerHTML = '';
 
-  for (const book of books) {
-    li_insert_item += `<li class="list_book_item"><a href="#"><div class="quick_view_card">
-              <img src="${
-                book.book_image
-              }" alt="" loading="lazy" class="js_category_image_place category_image_place" data-book-id=${
-      book._id
-    }/></div>
-              <p class="name_of_the_book">${truncateString(book.title)}</p>
-              <p class="writer_name">${truncateString(book.author)}</p></a>
-            </li>`;
-    li_Item = `<li><div class="genre_div"> 
-             <ul class="js_genre_cards_list genre_cards_list">
-              ${li_insert_item}
-            </ul>
-          </div>
-          </li>`;
-  }
+//   for (const book of books) {
+//     li_insert_item += `<li><a href = "#">
+//               <img src="${
+//                 book.book_image
+//               }" alt="" loading="lazy" class="bestSellers_image_place" />
+//               <p class="name_of_the_book">${truncateString(book.title)}</p>
+//               <p class="writer_name">${truncateString(book.author)}</p></a>
+//             </li>`;
+//     li_Item = `<li><div class="top_of_genres_div"> 
+//              <ul class="top_genre_cards_list">
+//               ${li_insert_item}
+//             </ul>
+//           </div>
+//           </li>`;
+//   }
 
-  list.insertAdjacentHTML('beforeend', li_Item);
+//   list.insertAdjacentHTML('beforeend', li_Item);
 
-  renderCategoryHeader(category);
-}
+//   renderCategoryHeader(category);
+// }
 
-export function renderCategoryHeader(category = 'Best Sellers Books') {
-  const header = document.querySelector('.js_category_header');
+// export function renderCategoryHeader(category = 'Best Sellers Books') {
+//   const header = document.querySelector('.best_sellers_header');
 
-  const headerWords = category.split(' ');
+//   const headerWords = category.split(' ');
 
-  const newHeader = headerWords.map((word, index) => {
-    if (index === headerWords.length - 1) {
-      return `<span class="h1_span_color">${word}</span>`;
-    }
+//   const newHeader = headerWords.map((word, index) => {
+//     if (index === headerWords.length - 1) {
+//       return `<span class="h1_span_color">${word}</span>`;
+//     }
 
-    return word;
-  });
+//     return word;
+//   });
 
-  header.innerHTML = newHeader.join(' ');
+//   header.innerHTML = newHeader.join(' ');
 
-  hideSpinner();
-}
+//   hideSpinner();
+// }
