@@ -68,6 +68,20 @@
   transform: translateX(var(--height));
 }
 //
+.burger-btn,
+.close-btn {
+  position: relative;
+  transition: opacity 0.5s ease;
+}
+.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
 .header-sec {
   display: flex;
   justify-content: space-between;
@@ -225,18 +239,3 @@
   color: var(--var-hover-fc);
 }
 
-.burger-btn,
-.close-btn {
-  position: relative;
-  transition: opacity 0.5s ease;
-}
-
-.hide {
-  opacity: 0;
-  pointer-events: none;
-}
-
-.show {
-  opacity: 1;
-  pointer-events: auto;
-}
