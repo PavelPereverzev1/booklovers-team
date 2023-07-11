@@ -2,19 +2,16 @@ import bookAPI from './book-api-class';
 
 const api = new bookAPI();
 
-// api.getAllCategories().then(data => console.log(data));
-
 api.renderAllCategoriesList(".categories-list");
-
-// const categoryName = api.getCategoryName();
-
-// api.getAllBookInCategory(categoryName);
-
 api.renderAllBooksInCategory();
 
-// api.getCategoryName();
 
-
+async function loadHomepage(){
+    const list = document.querySelector('.all_categories_section');
+    const topBooks = await api.getTopBooks();
+    
+    api.renderHomePage(list, topBooks);
+}
 
 function hideBook() {
     let screenSize = window.innerWidth;
@@ -33,5 +30,5 @@ function hideBook() {
 }
 
 hideBook();
-
+loadHomepage();
 window.addEventListener('resize', hideBook);
