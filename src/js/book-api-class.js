@@ -47,7 +47,6 @@ export default class bookAPI {
   }
 
   async getAllBookInCategory(categoryName) {
-    
     try {
       const response = await fetch(
         `https://books-backend.p.goit.global/books/category?category=${categoryName}`
@@ -58,7 +57,7 @@ export default class bookAPI {
       }
 
       const categories = await response.json();
-      
+
       return categories;
     } catch (error) {
       console.error(error);
@@ -66,10 +65,14 @@ export default class bookAPI {
   }
 
   truncateStr(str) {
-    if (window.innerWidth > 767 && window.innerWidth < 1440 && str.length > 22) {
+    if (
+      window.innerWidth > 767 &&
+      window.innerWidth < 1440 &&
+      str.length > 22
+    ) {
       return str.substring(0, 20) + '...';
     }
-  
+
     if (window.innerWidth >= 1440 && str.length > 20) {
       return str.substring(0, 18) + '...';
     }
@@ -78,7 +81,7 @@ export default class bookAPI {
 
   async renderAllBooksInCategory() {
     const contentBox = document.querySelector('.category_section');
-    
+
     const listCategory = document.querySelector(this.listEl);
 
     listCategory.addEventListener('click', event => {
@@ -92,44 +95,39 @@ export default class bookAPI {
 
       const categoryName = this.getCategoryName(event);
 
-      
-          
       if (categoryName !== 'All Categories') {
-            const categories = this.getAllBookInCategory(categoryName);
-      
-            categories
-              .then(async res => {
-                
+        const categories = this.getAllBookInCategory(categoryName);
+
+        categories
+          .then(async res => {
             this.renderSelectedCategory(contentBox, categoryName, res);
-                })
-              .catch(e => console.error(e));
-           
+          })
+          .catch(e => console.error(e));
       } else {
+        const topBooks = this.getTopBooks();
 
-            const topBooks = this.getTopBooks();
-
-            topBooks
-              .then(collections => {
-                
-                this.renderHomePage(contentBox, collections);
-              })
-              .catch(error => console.error(error)); 
+        topBooks
+          .then(collections => {
+            this.renderHomePage(contentBox, collections);
+          })
+          .catch(error => console.error(error));
       }
-    }); 
+    });
   }
 
   prepareCategoryName(categoryName = 'Best Sellers Books') {
-      const wordsArr = categoryName.split(' ');
-      return wordsArr.map((word, index) => {
+    const wordsArr = categoryName.split(' ');
+    return wordsArr
+      .map((word, index) => {
         if (index === wordsArr.length - 1) {
           return `<span class="h1_span_color">${word}</span>`;
         }
         return word;
-      }).join(' ');
+      })
+      .join(' ');
   }
 
   getCategoryName(listElement) {
-    
     const targetEl = listElement.target;
 
     const allItems = targetEl.parentNode.childNodes;
@@ -147,24 +145,30 @@ export default class bookAPI {
   }
 
   renderHomePage(contentBox, collections) {
-    
-    contentBox.childNodes.forEach((noda)=>{
-      if (noda.nodeName !== "#text") {
+    contentBox.childNodes.forEach(noda => {
+      if (noda.nodeName !== '#text') {
         if (noda.nodeName === 'H1') {
           noda.innerHTML = this.prepareCategoryName();
         } else if (noda.classList.contains('js-category_div')) {
-          
-          const markup = collections.map(({books, list_name}) =>{
-            
-            const booksList = books.map((book) => {
-          
-              return `<li class="list_book_item" data-bookid=${book._id} >
-                      <img src="${book.book_image}" alt="" loading="lazy" class="category_image_place" />
-                      <p class="name_of_the_book">${this.truncateStr(book.title)}</p>
-                      <p class="writer_name">${this.truncateStr(book.author)}</p>
-                     </li>`;}).join('');
+          const markup = collections
+            .map(({ books, list_name }) => {
+              const booksList = books
+                .map(book => {
+                  return `<li class="list_book_item" data-bookid=${book._id} >
+                      <img src="${
+                        book.book_image
+                      }" alt="" loading="lazy" class="category_image_place" />
+                      <p class="name_of_the_book">${this.truncateStr(
+                        book.title
+                      )}</p>
+                      <p class="writer_name">${this.truncateStr(
+                        book.author
+                      )}</p>
+                     </li>`;
+                })
+                .join('');
 
-            return `<li class="genre_div">
+              return `<li class="genre_div">
                         <p class="all_genres_list_header">${list_name}</p>
                         <ul class="genre_cards_list">
                          ${booksList}
@@ -172,9 +176,10 @@ export default class bookAPI {
                         <div class="btn_see_more_div">
                           <button class="see_more_btn" data-category="${list_name}" type="button">see more</button>
                         </div>
-                    </li>`
-          }).join('');
-          
+                    </li>`;
+            })
+            .join('');
+
           noda.innerHTML = `<ul class="js_category_list category_list">
           ${markup}
           </ul>`;
@@ -184,20 +189,25 @@ export default class bookAPI {
     this.setSeeMoreBtnHandler();
   }
 
-  renderSelectedCategory(contentBox, categoryName, books){
-    contentBox.childNodes.forEach((noda)=>{
-      if (noda.nodeName !== "#text") {
+  renderSelectedCategory(contentBox, categoryName, books) {
+    contentBox.childNodes.forEach(noda => {
+      if (noda.nodeName !== '#text') {
         if (noda.nodeName === 'H1') {
           noda.innerHTML = this.prepareCategoryName(categoryName);
         } else if (noda.classList.contains('js-category_div')) {
-          const bookItemMarkup = books.map((book) => {
-          
-          return `<li class="list_book_item" data-bookid=${book._id} >
-                  <img src="${book.book_image}" alt="" loading="lazy" class="category_image_place" />
-                  <p class="name_of_the_book">${this.truncateStr(book.title)}</p>
+          const bookItemMarkup = books
+            .map(book => {
+              return `<li class="list_book_item" data-bookid=${book._id} >
+                  <img src="${
+                    book.book_image
+                  }" alt="" loading="lazy" class="category_image_place" />
+                  <p class="name_of_the_book">${this.truncateStr(
+                    book.title
+                  )}</p>
                   <p class="writer_name">${this.truncateStr(book.author)}</p>
-                 </li>`; 
-          }).join('');
+                 </li>`;
+            })
+            .join('');
           noda.innerHTML = `<ul class="genre_cards_list">
           ${bookItemMarkup}
           </ul>`;
@@ -211,16 +221,18 @@ export default class bookAPI {
     const book = `https://books-backend.p.goit.global/books/${id}`;
 
     try {
-      const response = await axios.get(book);
-      const data = response.data;
+      const data = await fetch(book).then(responce =>
+        responce.json().then(data => {
+          return data;
+        })
+      );
       return data;
     } catch (error) {
-      console.warn('Error:', error);
-      throw error;
+      console.log('Error:', error);
     }
   }
 
-  async getTopBooks(){
+  async getTopBooks() {
     try {
       const response = await fetch(this.baseURl + 'top-books');
       if (!response.ok) {
@@ -264,22 +276,21 @@ export default class bookAPI {
   //   return response.json();
   // }
 
-  setSeeMoreBtnHandler () {
+  setSeeMoreBtnHandler() {
     const seeMoreBtns = document.querySelectorAll('.see_more_btn');
     const contentBox = document.querySelector('.category_section');
     if (seeMoreBtns.length > 0) {
       seeMoreBtns.forEach(btn => {
-        btn.addEventListener('click', (event) => {
-          
+        btn.addEventListener('click', event => {
           const categoryName = event.target.dataset.category;
           const books = this.getAllBookInCategory(categoryName);
-    
+
           books
-          .then(res => {
-            this.renderSelectedCategory(contentBox, categoryName, res);
-          })
-          .catch(error => console.error(error));
-        
+            .then(res => {
+              this.renderSelectedCategory(contentBox, categoryName, res);
+            })
+            .catch(error => console.error(error));
+
           this.filterByCategory(categoryName);
         });
       });
