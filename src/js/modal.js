@@ -6,9 +6,11 @@ import { load } from './storage';
 
 const modalBackdrop = document.querySelector('.modal-backdrop');
 const closeBtn = document.querySelector('.modal-close-btn');
-const list = document.querySelector('.js_category_list');
+const list = document.querySelector(".js-category_div");
 const addRemoveBtn = document.querySelector('.modal-add-btn');
 
+console.dir(list);
+// list.addEventListener("click", (e)=>{console.dir(e)})
 export const nameBtn = {
   add: 'Add to shopping list',
   remove: 'Remove from the shopping list',
@@ -33,8 +35,18 @@ async function getBookById(bookId) {
 
 async function handleListClick(event) {
   const target = event.target;
-  if (target.classList.contains('js_category_image_place')) {
-    const bookId = target.dataset.bookId;
+  
+  if (target.classList.contains('category_image_place') || target.classList.contains('writer_name') || target.classList.contains('name_of_the_book')) {
+
+    if (target.classList.contains('list_book_item')) {
+      //обработчик слепого пятна на элементе книги
+      console.log(target.dataset.bookid);
+      
+    }
+    
+    const liEl = target.parentElement;
+    const bookId = liEl.dataset.bookid;
+    console.dir(bookId);
     const bookData = await getBookById(bookId);
     createModalMarkup(bookData);
     openModal();
@@ -122,3 +134,8 @@ function handleBtn(bookId) {
 export function remameBtn(value) {
   addRemoveBtn.textContent = value;
 }
+// const booksList = document.querySelector(".js-category_div");
+
+// console.dir(booksList);
+        
+// booksList.addEventListener('click', (event)=>{console.dir(event.target)});
