@@ -34,7 +34,7 @@
   margin-bottom: 32px;
 }
 
-.best_sellers_header {
+.category_header {
   color: #111;
   font-size: 32px;
   font-style: normal;
@@ -78,10 +78,10 @@
   }
 }
 
-.top_of_genres_div {
+.genre_div {
   padding-top: 40px;
 }
-.top_genre_cards_list {
+.genre_cards_list {
   margin-bottom: 8px;
   flex-wrap: wrap;
   @media (max-width: 767px) {
@@ -127,7 +127,7 @@
   letter-spacing: -0.48px;
 }
 
-.bestSellers_image_place {
+.category_image_place {
   border-radius: 8px;
   width: 335px;
   height: 485px;

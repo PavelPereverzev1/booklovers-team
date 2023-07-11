@@ -4,7 +4,7 @@ import renderMarkupByData, {
 } from './render-markup-books-by-data';
 import fetchData from './best_sellers_load';
 // Додав ще імпорт для спіннера from Yaroslav Peleshko
-import { slawSpinner } from './spinner/spinner';
+import { activeSpinner } from './spinner/spinner';
 // ==================================
 
 export default class bookAPI {
@@ -66,7 +66,7 @@ export default class bookAPI {
   }
 
   async renderAllBooksInCategory() {
-    const contentBox = document.querySelector('.best_sellers_div');
+    const contentBox = document.querySelector('.js-category_div');
 
     const listCategory = document.querySelector(this.listEl);
 
@@ -76,7 +76,7 @@ export default class bookAPI {
         return;
       }
 
-      slawSpinner();
+      activeSpinner();
       // ===============================
 
       const categoryName = this.getCategoryName(event);

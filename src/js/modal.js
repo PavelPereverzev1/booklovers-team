@@ -6,7 +6,7 @@ import { load } from './storage';
 
 const modalBackdrop = document.querySelector('.modal-backdrop');
 const closeBtn = document.querySelector('.modal-close-btn');
-const list = document.querySelector('.best_sellers_list');
+const list = document.querySelector('.js_category_list');
 const addRemoveBtn = document.querySelector('.modal-add-btn');
 
 export const nameBtn = {
@@ -33,7 +33,7 @@ async function getBookById(bookId) {
 
 async function handleListClick(event) {
   const target = event.target;
-  if (target.classList.contains('bestSellers_image_place')) {
+  if (target.classList.contains('js_category_image_place')) {
     const bookId = target.dataset.bookId;
     const bookData = await getBookById(bookId);
     createModalMarkup(bookData);

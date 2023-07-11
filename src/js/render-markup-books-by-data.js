@@ -1,6 +1,6 @@
 import { hideSpinner } from './spinner/spinner';
 
-const list = document.querySelector('.best_sellers_list');
+const list = document.querySelector('.js_category_list');
 
 function truncateString(str) {
   if (window.innerWidth > 767 && window.innerWidth < 1440 && str.length > 22) {
@@ -20,15 +20,17 @@ export default function renderMarkupByData(books, category) {
   list.innerHTML = '';
 
   for (const book of books) {
-    li_insert_item += `<li><a href = "#">
+    li_insert_item += `<li class="list_book_item"><a href="#"><div class="quick_view_card">
               <img src="${
                 book.book_image
-              }" alt="" loading="lazy" class="bestSellers_image_place" />
+              }" alt="" loading="lazy" class="js_category_image_place category_image_place" data-book-id=${
+      book._id
+    }/></div>
               <p class="name_of_the_book">${truncateString(book.title)}</p>
               <p class="writer_name">${truncateString(book.author)}</p></a>
             </li>`;
-    li_Item = `<li><div class="top_of_genres_div"> 
-             <ul class="top_genre_cards_list">
+    li_Item = `<li><div class="genre_div"> 
+             <ul class="js_genre_cards_list genre_cards_list">
               ${li_insert_item}
             </ul>
           </div>
@@ -41,7 +43,7 @@ export default function renderMarkupByData(books, category) {
 }
 
 export function renderCategoryHeader(category = 'Best Sellers Books') {
-  const header = document.querySelector('.best_sellers_header');
+  const header = document.querySelector('.js_category_header');
 
   const headerWords = category.split(' ');
 

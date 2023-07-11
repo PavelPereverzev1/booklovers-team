@@ -1,6 +1,6 @@
 import createButtonsEvent from './all-books-by-category';
 
-const list = document.querySelector('.best_sellers_list');
+const list = document.querySelector('.js_category_list');
 
 async function getTopBooks() {
   const url = `https://books-backend.p.goit.global/books/top-books`;
@@ -41,22 +41,22 @@ export default async function fetchData() {
           li_insert_item += `<li class="list_book_item"><a href="#"><div class="quick_view_card">
               <img src="${
                 book.book_image
-              }" alt="" loading="lazy" class="bestSellers_image_place" data-book-id=${
+              }" alt="" loading="lazy" class="js_category_image_place category_image_place" data-book-id=${
             book._id
           }/></div>
               <p class="name_of_the_book">${truncateString(book.title)}</p>
               <p class="writer_name">${truncateString(book.author)}</p></a>
             </li>`;
         }
-        li_Item += `<li><div class="top_of_genres_div"> 
+        li_Item += `<li><div class="genre_div"> 
         <p class="all_genres_list_header">
             ${genre.list_name}
           </p>
-             <ul class="top_genre_cards_list">
+             <ul class="js_genre_cards_list genre_cards_list">
               ${li_insert_item}
             </ul>
              <div class="btn_see_more_div">
-            <button class="see_more_btn" data-category="${genre.list_name}" type="button">see more</button>
+            <button class="js_see_more_btn see_more_btn" data-category="${genre.list_name}" type="button">see more</button>
           </div>
           </div>
           </li>`;
