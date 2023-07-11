@@ -8,10 +8,10 @@ function addMarker() {
     
   const pathname = window.location.pathname;
 
-    if (pathname.includes('index')) {
-        homeBtn.classList.add('current');
-    } else {
+    if (pathname.includes('shopping-list')) {
         shopListBtn.classList.add('current');
+    } else {
+        homeBtn.classList.add('current');
     }
 }
 // /booklovers-team/shopping-list.html
