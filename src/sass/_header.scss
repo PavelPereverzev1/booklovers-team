@@ -81,7 +81,6 @@
 .nav {
   display: flex;
 }
-
 .nav-list {
   display: none;
 
@@ -92,7 +91,12 @@
     align-items: center;
   }
 }
-
+.burger-btn {
+  display: flex;
+}
+.close-btn {
+  display: none;
+}
 .burger-ico {
   width: 28px;
   height: 28px;
@@ -101,6 +105,16 @@
   stroke: #4f2ee8;
 }
 .burger-ico:focus {
+  stroke: #4f2ee8;
+}
+.close-ico {
+  width: 28px;
+  height: 28px;
+}
+.close-ico:hover {
+  stroke: #4f2ee8;
+}
+.close-ico:focus {
   stroke: #4f2ee8;
 }
 //
@@ -160,6 +174,9 @@
   .burger-btn {
     display: none;
   }
+  .close-btn {
+    display: none;
+  }
   .sing-up-btn {
     display: flex;
   }
@@ -167,29 +184,6 @@
     display: flex;
   }
 }
-// dark theme
-// .dark {
-//     background-color: #111;
-//     border-color: #ffffff;
-// }
-// .dark-txt {
-//     color: #ffffff;
-// }
-// .dark-ico {
-//     fill: #ffffff;
-//     stroke: #ffffff;
-// }
-
-// .light-theme {
-//   background-color: #ffffff;
-//   color: #000000;
-// }
-
-// /* Стилі для темної теми */
-// .dark-theme {
-//   background-color: #1c1c1c;
-//   color: #ffffff;
-// }
 
 .header-sec {
   border: var(--var-text-fc) 2px solid;
@@ -198,6 +192,9 @@
   border-bottom-right-radius: 8px;
 }
 .burger-ico {
+  stroke: var(--var-ico-brg); 
+}
+.close-ico {
   stroke: var(--var-ico-brg);
 }
 .logo {
@@ -226,4 +223,20 @@
 
 .categories-list-item-selected {
   color: var(--var-hover-fc);
+}
+
+.burger-btn,
+.close-btn {
+  position: relative;
+  transition: opacity 0.5s ease;
+}
+
+.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.show {
+  opacity: 1;
+  pointer-events: auto;
 }
