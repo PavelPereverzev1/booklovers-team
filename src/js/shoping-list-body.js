@@ -1,13 +1,37 @@
 // автор Євгенія
 
+import { removeBookFromStorage } from './handle-shopping-list-modal';
+import amazonIcon from '../images/amazon.jpg';
+import appleBookIcon from '../images/apple-book.jpg';
+import bookshopIcon from '../images/book-shop.jpg';
+import booksShopingList from '../images/books-shoping-list.png';
+import iconCart from '../images/icons.svg';
+
 const NAME_STORAGE = 'shopping-list';
-
 const shopingListBooksRef = document.querySelector('.shoping_list_books');
-
-const shopingListArrey = JSON.parse(localStorage.getItem(NAME_STORAGE)) ?? [];
 
 if (!shopingListBooksRef) {
   return;
+}
+
+const shopingListArrey = JSON.parse(localStorage.getItem(NAME_STORAGE)) ?? [];
+
+shopingListBooksRef.addEventListener('click', onRemoveButtonClick);
+
+createMarkupShoppingList(shopingListArrey, shopingListBooksRef);
+
+async function onRemoveButtonClick(evt) {
+  const target = evt.target;
+  const currentBookId = target.closest('.shoping-list-book-card').dataset.id;
+
+  if (
+    target.classList.contains('icon-cart') ||
+    target.classList.contains('trash') ||
+    target.classList.contains('trash-thumb')
+  ) {
+    removeBookFromStorage(currentBookId);
+    location.reload();
+  }
 }
 
 function createMarkupShoppingList(arrey, list) {
@@ -63,5 +87,3 @@ function createMarkupShoppingList(arrey, list) {
   }
   list.innerHTML = markup;
 }
-
-createMarkupShoppingList(shopingListArrey, shopingListBooksRef);
