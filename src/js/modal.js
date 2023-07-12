@@ -66,10 +66,12 @@ function openModal() {
 }
 
 function closeModal() {
-  modalBackdrop.classList.add('visually-hidden');
-  document.body.classList.remove('no-scroll');
   modal.classList.remove('visible');
-  removeEventListeners();
+  setTimeout(() => {
+    modalBackdrop.classList.add('visually-hidden');
+    document.body.classList.remove('no-scroll');
+    removeEventListeners();
+  }, 250);
 }
 
 async function handleListClick(event) {
