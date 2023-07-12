@@ -11,11 +11,11 @@ const refs = {
   signUpForm: document.querySelector('.js-sign-up-form'),
 };
 
-refs.loginBtn.addEventListener('click', openLoginWindow);
+// refs.loginBtn.addEventListener('click', openLoginWindow);
 refs.loginBtnMobile.addEventListener('click', openLoginWindow);
 refs.closeBtn.addEventListener('click', closeLoginWindow);
 refs.signUpForm.addEventListener('submit', submitRegistration);
-refs.logoutBtn.addEventListener('click', logOut);
+// refs.logoutBtn.addEventListener('click', logOut);
 refs.logoutBtnMobile.addEventListener('click', logOut);
 
 function submitRegistration(event) {
