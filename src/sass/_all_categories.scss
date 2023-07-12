@@ -249,6 +249,7 @@
   transition: opacity 600ms, transform 500ms;
   bottom: 50;
   transform: scale(1);
+  pointer-events: none;
 }
 
 
