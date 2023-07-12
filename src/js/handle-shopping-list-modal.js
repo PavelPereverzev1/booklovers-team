@@ -10,7 +10,10 @@ const api = new bookAPI();
 let currentBookId = '';
 
 const addBtn = document.querySelector('.modal-add-btn');
-addBtn.addEventListener('click', controlShoppingList);
+
+if (addBtn) {
+  addBtn.addEventListener('click', controlShoppingList);
+}
 
 async function controlShoppingList() {
   if (!load(NAME_STORAGE)) save(NAME_STORAGE, []);
