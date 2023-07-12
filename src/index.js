@@ -10,3 +10,4 @@ import './js/theme-switcher';
 import './js/modal';
 import './js/mobile-menu';
 import './js/shoping-list-body';
+import './js/registration-window';
