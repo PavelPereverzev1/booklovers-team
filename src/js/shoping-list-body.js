@@ -3,22 +3,27 @@
 const NAME_STORAGE = 'shopping-list';
 
 const shopingListBooksRef = document.querySelector('.shoping_list_books');
-console.log(shopingListBooksRef);
 
 const shopingListArrey = JSON.parse(localStorage.getItem(NAME_STORAGE)) ?? [];
 
+if (!shopingListBooksRef) {
+  return;
+}
+
 function createMarkupShoppingList(arrey, list) {
-  const markup = arrey
-    .map(
-      ({
-        _id,
-        book_image,
-        list_name,
-        title,
-        description,
-        author,
-        buy_links,
-      }) => `<li data-id="${_id}">
+  let markup;
+  if (arrey.length) {
+    markup = arrey
+      .map(
+        ({
+          _id,
+          book_image,
+          list_name,
+          title,
+          description,
+          author,
+          buy_links,
+        }) => `<li data-id="${_id}">
             <div class="book-card">
                 <img class="book-cover" src="${book_image}" alt="${title}" />
                 <div class="book-info">
@@ -48,10 +53,15 @@ function createMarkupShoppingList(arrey, list) {
                 </div>
             </div>
         </li>`
-    )
-    .join('');
-
+      )
+      .join('');
+  } else {
+    markup = `<div class="shoping_list_box">
+        <p class="shoping_list_text">This page is empty, add some books and proceed to order.</p>
+        <img class="shoping_list_image" src="./images/books-shoping-list.png" alt="books">
+    </div>`;
+  }
   list.innerHTML = markup;
 }
 
-createMarkupShoppingList(shopingListArrey, shoppingListBooksRef);
+createMarkupShoppingList(shopingListArrey, shopingListBooksRef);
