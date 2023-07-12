@@ -1,3 +1,4 @@
+
 import amazonIcon from '../images/amazon.jpg';
 import appleBookIcon from '../images/apple-book.jpg';
 import bookshopIcon from '../images/book-shop.jpg';
@@ -8,8 +9,6 @@ const modalBackdrop = document.querySelector('.modal-backdrop');
 const closeBtn = document.querySelector('.modal-close-btn');
 const list = document.querySelector(".js-category_div");
 const addRemoveBtn = document.querySelector('.modal-add-btn');
-
-
 
 export const nameBtn = {
   add: 'Add to shopping list',
@@ -33,48 +32,59 @@ async function getBookById(bookId) {
   }
 }
 
+function createModalMarkup(data) {
+  const modalContent = document.querySelector('.modal-flex-container');
+  modalContent.innerHTML = `
+    <div class="modal-flex-content">  
+      <img class="modal-image-book" src="${data.book_image}" alt="Book cover">
+      <div class="modal-flex-div">  
+        <h2 class="modal-book-name">${data.title}</h2>
+        <p class="modal-author">${data.author}</p>
+        <p class="modal-description">${data.description}</p>
+        <div class="shops-container">
+          <a class="modal-shops-images" href="${data.buy_links[0].url}" target="_blank">
+            <img class="modal-image-amazon" src="${amazonIcon}" alt="Amazon shop">
+          </a>
+          <a class="modal-shops-images" href="${data.buy_links[1].url}" target="_blank">
+            <img class="modal-image-apple" src="${appleBookIcon}" alt="Apple shop">
+          </a>
+          <a class="modal-shops-images" href="${data.buy_links[4].url}" target="_blank">
+            <img class="modal-image-bookshop" src="${bookshopIcon}" alt="Bookshop">
+          </a>
+        </div>
+      </div>
+    </div>
+  `;
+}
+
+function openModal() {
+  modalBackdrop.classList.remove('visually-hidden');
+  document.body.classList.add('no-scroll');
+  addEventListeners();
+}
+
+function closeModal() {
+  modalBackdrop.classList.add('visually-hidden');
+  document.body.classList.remove('no-scroll');
+  removeEventListeners();
+}
+
 async function handleListClick(event) {
   const target = event.target;
-  
-  if (target.classList.contains('category_image_place') || target.classList.contains('writer_name') || target.classList.contains('name_of_the_book')) {
-    
+
+  if (
+    target.classList.contains('category_image_place') ||
+    target.classList.contains('writer_name') ||
+    target.classList.contains('name_of_the_book')
+  ) {
     const liEl = target.parentElement;
     const bookId = liEl.dataset.bookid;
-    // console.dir(bookId);
     const bookData = await getBookById(bookId);
     createModalMarkup(bookData);
     openModal();
     saveCurrentBookId(bookData._id);
     handleBtn(bookData._id);
   }
-}
-
-function createModalMarkup(data) {
-  const modalContent = document.querySelector('.modal-flex-container');
-  modalContent.innerHTML = `
-   
-    <div class="modal-flex-content">  
-    <img class="modal-image-book" src="${data.book_image}" alt="Book cover">
-    <div class="modal-flex-div">  
-    <h2 class="modal-book-name">${data.title}</h2>
-    <p class="modal-author">${data.author}</p>
-    <p class="modal-description">${data.description}</p>
-    
-    <div class="shops-container">
-
-        <a class="modal-shops-images" href="${data.buy_links[0].url}" target="_blank">
-            <img class="modal-image-amazon" src="${amazonIcon}" alt="Amazon shop">
-            </a>
-            <a class="modal-shops-images" href="${data.buy_links[1].url}" target="_blank">
-                <img class="modal-image-apple" src="${appleBookIcon}" alt="Apple shop">
-        </a>
-        <a class="modal-shops-images" href="${data.buy_links[4].url}" target="_blank">
-            <img class="modal-image-bookshop" src="${bookshopIcon}" alt="Bookshop">
-        </a>
-        </div>
-    </div>
-</div>
-    `;
 }
 
 function handleCloseBtnClick() {
@@ -93,41 +103,10 @@ function handleKeyDown(event) {
   }
 }
 
-function openModal() {
-  modalBackdrop.classList.remove('visually-hidden');
-  document.body.classList.add('no-scroll');
-}
-
-function closeModal() {
-  modalBackdrop.classList.add('visually-hidden');
-  document.body.classList.remove('no-scroll');
-}
-
-if (list) {
-  list.addEventListener('click', handleListClick);
-}
-
-if(closeBtn){
-closeBtn.addEventListener('click', handleCloseBtnClick);
-}
-
-if(modalBackdrop){
-modalBackdrop.addEventListener('click', handleModalBackdropClick);
-}
-
-document.addEventListener('keydown', handleKeyDown);
-
-function removeEventListeners() {
-  list.removeEventListener('click', handleListClick);
-  closeBtn.removeEventListener('click', handleCloseBtnClick);
-  modalBackdrop.removeEventListener('click', handleModalBackdropClick);
-  document.removeEventListener('keydown', handleKeyDown);
-}
-
 function handleBtn(bookId) {
   const shoppingList = load(NAME_STORAGE);
 
-  if (shoppingList.some(book => book._id === bookId)) {
+  if (shoppingList.some((book) => book._id === bookId)) {
     remameBtn(nameBtn.remove);
     return;
   }
@@ -136,4 +115,32 @@ function handleBtn(bookId) {
 
 export function remameBtn(value) {
   addRemoveBtn.textContent = value;
+}
+
+function addEventListeners() {
+  if (closeBtn) {
+    closeBtn.addEventListener('click', handleCloseBtnClick);
+  }
+
+  if (modalBackdrop) {
+    modalBackdrop.addEventListener('click', handleModalBackdropClick);
+  }
+
+  document.addEventListener('keydown', handleKeyDown);
+}
+
+function removeEventListeners() {
+  if (closeBtn) {
+    closeBtn.removeEventListener('click', handleCloseBtnClick);
+  }
+
+  if (modalBackdrop) {
+    modalBackdrop.removeEventListener('click', handleModalBackdropClick);
+  }
+
+  document.removeEventListener('keydown', handleKeyDown);
+}
+
+if (list) {
+  list.addEventListener('click', handleListClick);
 }
