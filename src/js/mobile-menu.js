@@ -7,6 +7,7 @@ const refs = {
   mobileMenuGuest: document.querySelector('.mobile-menu_guest'),
   mobileMenuUser: document.querySelector('.mobile-menu_user'),
   burgerIcon: document.querySelector('.burger-ico'),
+  navList: document.querySelector('.nav-list'),
 };
 
 refs.burgerBtn.addEventListener('click', handleMobileMenu);
@@ -24,8 +25,10 @@ function handleMobileMenu() {
     openMobileMenu();
     refs.closeBtn.style.display = 'flex';
     refs.burgerBtn.style.display = 'none';
-    refs.burgerBtn.classList.add('hide');
-    refs.closeBtn.classList.add('show');
+    addClass(refs.burgerBtn, 'hide');
+    addClass(refs.closeBtn, 'show');
+    addClass(refs.navList, 'nav-list_is-visible');
+
     menuStatus = 'open';
     return;
   }
@@ -33,8 +36,9 @@ function handleMobileMenu() {
     closeMobileMenu();
     refs.closeBtn.style.display = 'none';
     refs.burgerBtn.style.display = 'flex';
-    refs.burgerBtn.classList.add('show');
-    refs.closeBtn.classList.add('hide');
+    addClass(refs.burgerBtn, 'show');
+    addClass(refs.closeBtn, 'hide');
+    removeClass(refs.navList, 'nav-list_is-visible');
     menuStatus = 'close';
     return;
   }
@@ -54,6 +58,7 @@ function closeMobileMenu() {
   if (load('user')) {
     addClass(refs.mobileMenuContainer, 'mobile-menu_is-hidden');
     removeClass(refs.mobileMenuUser, 'open');
+
     return;
   }
   addClass(refs.mobileMenuContainer, 'mobile-menu_is-hidden');
