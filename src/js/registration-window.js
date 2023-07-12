@@ -4,16 +4,19 @@ export const NAME_STORAGE_USER = 'userData';
 
 const refs = {
   loginBtn: document.querySelector('.js-log-in-btn'),
-  logoutBtn: document.querySelector('.js-log-out-btn'),
+  loginBtnMobile: document.querySelector('.js-log-in-btn-mobile'),
+  logoutBtnMobile: document.querySelector('.js-log-out-btn-mobile'),
   modalRegistration: document.querySelector('.js-modal-registration'),
   closeBtn: document.querySelector('.js-modal-registration-close-btn'),
   signUpForm: document.querySelector('.js-sign-up-form'),
 };
 
 refs.loginBtn.addEventListener('click', openLoginWindow);
+refs.loginBtnMobile.addEventListener('click', openLoginWindow);
 refs.closeBtn.addEventListener('click', closeLoginWindow);
 refs.signUpForm.addEventListener('submit', submitRegistration);
 refs.logoutBtn.addEventListener('click', logOut);
+refs.logoutBtnMobile.addEventListener('click', logOut);
 
 function submitRegistration(event) {
   event.preventDefault();
