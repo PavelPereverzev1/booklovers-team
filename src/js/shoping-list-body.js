@@ -9,20 +9,21 @@ import iconCart from '../images/icons.svg';
 
 const NAME_STORAGE = 'shopping-list';
 const shopingListBooksRef = document.querySelector('.shoping_list_books');
+const shopingListArrey = JSON.parse(localStorage.getItem(NAME_STORAGE)) ?? [];
+let quantityAllBooks = shopingListArrey.length;
 
 if (!shopingListBooksRef) {
   return;
 }
 
-const shopingListArrey = JSON.parse(localStorage.getItem(NAME_STORAGE)) ?? [];
-
 shopingListBooksRef.addEventListener('click', onRemoveButtonClick);
 
 createMarkupShoppingList(shopingListArrey, shopingListBooksRef);
 
-async function onRemoveButtonClick(evt) {
+function onRemoveButtonClick(evt) {
   const target = evt.target;
-  const currentBookId = target.closest('.shoping-list-book-card').dataset.id;
+  const currentBook = target.closest('.shoping-list-book-card');
+  const currentBookId = currentBook.dataset.id;
 
   if (
     target.classList.contains('icon-cart') ||
@@ -30,7 +31,14 @@ async function onRemoveButtonClick(evt) {
     target.classList.contains('trash-thumb')
   ) {
     removeBookFromStorage(currentBookId);
-    location.reload();
+    currentBook.remove();
+    quantityAllBooks -= 1;
+  }
+  if (quantityAllBooks === 0) {
+    shopingListBooksRef.innerHTML = `<div class="shoping_list_box">
+        <p class="shoping_list_text">This page is empty, add some books and proceed to order.</p>
+        <img class="shoping_list_image" src="${booksShopingList}" alt="books">
+    </div>`;
   }
 }
 
