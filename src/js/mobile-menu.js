@@ -7,7 +7,7 @@ const refs = {
   mobileMenuGuest: document.querySelector('.mobile-menu_guest'),
   mobileMenuUser: document.querySelector('.mobile-menu_user'),
   burgerIcon: document.querySelector('.burger-ico'),
-  navList: document.querySelector('.nav-list'),
+  userName: document.querySelector('.user_name'),
 };
 
 refs.burgerBtn.addEventListener('click', handleMobileMenu);
@@ -16,6 +16,7 @@ refs.closeBtn.addEventListener('click', handleMobileMenu);
 const user = {
   name: 'userName',
 };
+
 let menuStatus = 'close';
 
 save('user', user);
@@ -27,7 +28,6 @@ function handleMobileMenu() {
     refs.burgerBtn.style.display = 'none';
     addClass(refs.burgerBtn, 'hide');
     addClass(refs.closeBtn, 'show');
-    addClass(refs.navList, 'nav-list_is-visible');
 
     menuStatus = 'open';
     return;
@@ -38,7 +38,6 @@ function handleMobileMenu() {
     refs.burgerBtn.style.display = 'flex';
     addClass(refs.burgerBtn, 'show');
     addClass(refs.closeBtn, 'hide');
-    removeClass(refs.navList, 'nav-list_is-visible');
     menuStatus = 'close';
     return;
   }
@@ -46,6 +45,8 @@ function handleMobileMenu() {
 
 function openMobileMenu() {
   if (load('user')) {
+    refs.userName.textContent = user.name;
+
     removeClass(refs.mobileMenuContainer, 'mobile-menu_is-hidden');
     addClass(refs.mobileMenuUser, 'open');
     return;
