@@ -35,7 +35,13 @@
     padding-left: 24px;
     padding-right: 24px;
     cursor: auto;
+    opacity: 0;
+    transition: opacity 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+.modal.visible {
+    opacity: 1;
+  }
 
 @media  screen and (min-width: 768px ) {
     .modal{
