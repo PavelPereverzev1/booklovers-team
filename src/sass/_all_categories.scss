@@ -259,14 +259,13 @@
     right: 30px;
  }
  @media(min-width:768px){
-  right:50px;
+  right:30px;
  }
  @media(min-width:1440px){
   right:0px;
  }
 }
 .btn_scroll_up{
- 
     position: absolute;
    bottom:80px;
    right: 7px;
@@ -276,8 +275,6 @@
   box-shadow: 0 0 0 5px #4F2EE84D;
 background-color:#4F2EE8;
     }
-
-
 .icon-scroll{
     width:24px;
     height:24px;
