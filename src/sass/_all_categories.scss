@@ -253,15 +253,23 @@
 
 
 .btn_scroll_up-container{
-  @media(max-width:768){
-  position: relative;
-  }
+ @media(min-width:380px){
+    position: fixed;
+    bottom: 0px;
+    right: 30px;
+ }
+ @media(min-width:768px){
+  right:50px;
+ }
+ @media(min-width:1440px){
+  right:0px;
+ }
 }
 .btn_scroll_up{
-  @media(max-width:768){
+ 
     position: absolute;
-   bottom:80;
-   right: 7;
+   bottom:80px;
+   right: 7px;
   width:54px;
   height:54px;
   border-radius: 50%;
@@ -269,16 +277,10 @@
 background-color:#4F2EE8;
     }
 
-}
+
 .icon-scroll{
-  @media(max-width:768){
     width:24px;
     height:24px;
     fill:white;
-    }
-    @media(min-width: 769px){
-      display: none;
-    }
-
 }
 

@@ -1,4 +1,4 @@
-export const scrollButton = document.getElementById("scroll-up-btn")
+const scrollButton = document.getElementById("scroll-up-btn")
 
 scrollButton.addEventListener('click', () => {
     window.scrollTo({
@@ -10,6 +10,9 @@ scrollButton.addEventListener('click', () => {
 function handleScroll() {
     if (window.scrollY > 500) {
         scrollButton.style.display = 'block';
+    }
+    else{
+        scrollButton.style.display = 'none';
     }
    
 }
