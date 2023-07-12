@@ -23,7 +23,7 @@ function createMarkupShoppingList(arrey, list) {
           description,
           author,
           buy_links,
-        }) => `<li data-id="${_id}">
+        }) => `<li class="shoping-list-book-card" data-id="${_id}">
             <div class="book-card">
                 <img class="book-cover" src="${book_image}" alt="${title}" />
                 <div class="book-info">
@@ -35,19 +35,19 @@ function createMarkupShoppingList(arrey, list) {
                     <p class="book-author">${author}</p>
                     <button class="trash-thumb" type="button">
                         <svg class="icon trash">
-                            <use xlink:href="./images/icons.svg#icon-trash-03.svg"></use>
+                            <use class="icon-cart" href="${iconCart}#icon-trash-03"></use>
                         </svg>
                     </button>
                     <ul class="book-stores">
                         <li>
                             <a href="${buy_links[0].url}">
-                                <img class="icon-store amazon" src="./images/amazon.jpg" alt="Book cover" /></a>
+                                <img class="icon-store amazon" src="${amazonIcon}" alt="Book cover" /></a>
                         </li>
                         <li>
-                            <a href="${buy_links[1].url}"><img class="icon-store apple-book" src="./images//apple-book.jpg" alt="Book cover" /></a>
+                            <a href="${buy_links[1].url}"><img class="icon-store apple-book" src="${appleBookIcon}" alt="Book cover" /></a>
                         </li>
                         <li>
-                            <a href="${buy_links[4].url}"><img class="icon-store book-shop" src="./images//book-shop.jpg" alt="Book cover" /></a>
+                            <a href="${buy_links[4].url}"><img class="icon-store book-shop" src="${bookshopIcon}" alt="Book cover" /></a>
                         </li>
                     </ul>
                 </div>
@@ -58,7 +58,7 @@ function createMarkupShoppingList(arrey, list) {
   } else {
     markup = `<div class="shoping_list_box">
         <p class="shoping_list_text">This page is empty, add some books and proceed to order.</p>
-        <img class="shoping_list_image" src="./images/books-shoping-list.png" alt="books">
+        <img class="shoping_list_image" src="${booksShopingList}" alt="books">
     </div>`;
   }
   list.innerHTML = markup;
