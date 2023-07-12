@@ -20,26 +20,22 @@ shopingListBooksRef.addEventListener('click', onRemoveButtonClick);
 
 createMarkupShoppingList(shopingListArrey, shopingListBooksRef);
 
-async function onRemoveButtonClick(evt) {
+function onRemoveButtonClick(evt) {
   const target = evt.target;
   const currentBook = target.closest('.shoping-list-book-card');
   const currentBookId = currentBook.dataset.id;
   let quantityAllBooks = shopingListArrey.length;
   console.log(quantityAllBooks);
+
   if (
     target.classList.contains('icon-cart') ||
     target.classList.contains('trash') ||
     target.classList.contains('trash-thumb')
   ) {
-    await removeBookFromStorage(currentBookId);
+    removeBookFromStorage(currentBookId);
     currentBook.remove();
-
     quantityAllBooks -= 1;
     console.log(quantityAllBooks);
-
-    if (quantityAllBooks === 0) {
-      createMarkupShoppingList(shopingListArrey, shopingListBooksRef);
-    }
   }
 }
 
