@@ -1,12 +1,30 @@
+// Author: YURII CORSSA
+
 .modal-registration {
   opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  z-index: 30;
+  z-index: 3;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  background-color: $clr-brand;
+  pointer-events: none;
+}
+
+.modal-registration.open {
+  transform: translate(-50%, -50%);
+  opacity: 1;
+  pointer-events: all;
+  transition: opacity 0.3s ease-out;
+}
+
+.modal-registration_form {
+  position: relative;
 
   display: flex;
   padding: 40px 20px;
@@ -20,10 +38,44 @@
   background: #202024;
 }
 
-.modal-registration.active {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: all;
+// .modal-registration::before {
+//   content: '';
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   z-index: -1;
+//   width: 100%;
+//   height: 100%;
+//   background-color: $clr-brand;
+// }
+
+.modal-registration .modal-registration_form {
+  transform: scale(1.1);
+  transition: transform 0.3s ease-out;
+}
+
+.modal-registration.open .modal-registration_form {
+  transform: scale(1);
+}
+
+.modal-registration_close_btn {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+}
+
+.modal-registration_close_icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  stroke: #f6f6f6;
+}
+
+.modal-registration_icon {
+  width: 20px;
+  height: 20px;
+  flex-shrink: 0;
+  stroke: #f6f6f6;
 }
 
 .signup_form {
@@ -34,9 +86,13 @@
   width: 295px;
 }
 
+.input_wrapper {
+  position: relative;
+}
+
 .signup_input {
   width: 100%;
-  padding: 16px 173px 16px 24px;
+  padding: 16px 58px 16px 24px;
 
   color: #f6f6f6;
   font-weight: 700;
@@ -52,6 +108,18 @@
   color: #f6f6f6;
 }
 
+.modal-registration_icon {
+  position: absolute;
+  top: 50%;
+  right: 24px;
+  transform: translateY(-50%);
+}
+
+.sign-up-in_links {
+  display: flex;
+  gap: 20px;
+}
+
 .signup_btn {
   width: 100%;
   padding: 16px;
@@ -65,29 +133,36 @@
   background: #f6f6f6;
 }
 
-.backdrop-registration {
-  opacity: 0;
-  visibility: hidden;
-  pointer-events: none;
+.signup_btn_link,
+.signin_btn_link {
+  height: 18px;
 
-  position: fixed;
-  top: 0;
-  left: 0;
-
-  z-index: 1;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  width: 100%;
-  height: 100%;
-
-  background: #4f2ee8;
+  color: rgba(246, 246, 246, 0.5);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: -0.14px;
+  text-transform: uppercase;
 }
 
-.backdrop-registration.active {
-  opacity: 1;
-  visibility: visible;
-  pointer-events: all;
+.signup_btn_link.active,
+.signin_btn_link.active {
+  color: #4f2ee8;
+  text-decoration-line: underline;
+}
+
+.signin_btn_link:disabled {
+  cursor: not-allowed;
+}
+
+.modal-registration-close_btn {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  flex-shrink: 0;
+}
+
+.modal-registration-close_icon {
+  stroke: #f6f6f6;
+  width: 20px;
+  height: 20px;
 }
