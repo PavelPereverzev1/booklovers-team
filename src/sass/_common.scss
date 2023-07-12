@@ -48,6 +48,7 @@ $clr-text-black: #000;
     --var-ico-brg: #111; 
     --var-hover-fc: #4F2EE8;
     --var-clr-text: #000;
+    --var-shop-list-text: rgba(0, 0, 0, 0.60);
 }
 
 [dark] {
@@ -58,6 +59,7 @@ $clr-text-black: #000;
     --var-ico-brg: #FFF; 
     --var-hover-fc: #EAC645;
     --var-clr-text: #FFF;
+    --var-shop-list-text: rgba(255, 255, 255, 0.60)
 }
 
 
