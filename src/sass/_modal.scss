@@ -25,7 +25,7 @@
   overflow-x: hidden;
   overflow-y: auto;
   transform: translate(-50%,-50%)scale(1);
-    max-height: 85vw;
+    max-height: 100vh;
     min-width: 335px;
     background-color: #FFFFFF;
     border: 2px solid #111111;
@@ -35,7 +35,14 @@
     padding-left: 24px;
     padding-right: 24px;
     cursor: auto;
+    opacity: 0;
+    transition: opacity 0.25s cubic-bezier(0.4, 0, 0.2, 1), transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+.modal.visible {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+  }
 
 @media  screen and (min-width: 768px ) {
     .modal{
@@ -201,7 +208,8 @@ margin-bottom: 4px;
 }
 
 .modal-add-btn{
-    width: 211px;
+    min-width: 210px;
+    padding: 23px 14px;
     height: 46px;
     margin-right: auto;
     margin-left: auto;

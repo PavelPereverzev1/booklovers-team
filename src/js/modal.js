@@ -8,6 +8,7 @@ import { load } from './storage';
 const modalBackdrop = document.querySelector('.modal-backdrop');
 const closeBtn = document.querySelector('.modal-close-btn');
 const list = document.querySelector(".js-category_div");
+const modal = document.querySelector('.modal');
 const addRemoveBtn = document.querySelector('.modal-add-btn');
 
 export const nameBtn = {
@@ -60,13 +61,17 @@ function createModalMarkup(data) {
 function openModal() {
   modalBackdrop.classList.remove('visually-hidden');
   document.body.classList.add('no-scroll');
+  modal.classList.add('visible');
   addEventListeners();
 }
 
 function closeModal() {
-  modalBackdrop.classList.add('visually-hidden');
-  document.body.classList.remove('no-scroll');
-  removeEventListeners();
+  modal.classList.remove('visible');
+  setTimeout(() => {
+    modalBackdrop.classList.add('visually-hidden');
+    document.body.classList.remove('no-scroll');
+    removeEventListeners();
+  }, 250);
 }
 
 async function handleListClick(event) {
