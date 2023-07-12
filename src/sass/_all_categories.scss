@@ -205,12 +205,13 @@
 .quick_view_card {
   position: relative;
   overflow: hidden;
+  cursor: pointer;;
 }
 
 .quick_view_card::after {
   content: 'quick view ';
   position: absolute;
-  bottom: 14;
+  bottom: 50;
   left: 0;
   display: flex;
   height: 70px;
@@ -235,6 +236,6 @@
 .quick_view_card:hover::after {
   opacity: 1;
   transition: opacity 600ms, transform 500ms;
-  bottom: 14;
+  bottom: 50;
   transform: scale(1);
 }
