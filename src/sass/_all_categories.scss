@@ -89,7 +89,6 @@
       display: none;
     }
   }
-
   @media (max-width: 1439px) {
     li:not(:nth-child(-n + 3)) {
       display: none;
@@ -108,6 +107,36 @@
     margin-bottom: 32px;
   }
 }
+
+.genre_cards_list.category {
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+  @media (max-width: 767px) {
+    li:not(:first-child) {
+      display: block;
+      justify-content: center;
+    }
+  }
+  @media (max-width: 1439px) {
+    li:not(:nth-child(-n + 3)) {
+      display: block;
+    }
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 20px;
+  }
+  @media (min-width: 1440px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 22px;
+    margin-bottom: 32px;
+  }
+}
+ 
+
 .name_of_the_book {
   color: var(--var-text-fc);
   font-size: 16px;

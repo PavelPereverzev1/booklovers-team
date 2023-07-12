@@ -29,6 +29,9 @@ export default class bookAPI {
     this.listEl = targetElclass;
     const listCategories = await this.getAllCategories();
     const targetEl = document.querySelector(this.listEl);
+    if (!targetEl) {
+      return;
+    }
     if (!listCategories) {
       targetEl.innerHTML = 'Failed to load categories list';
     }
@@ -83,6 +86,10 @@ export default class bookAPI {
     const contentBox = document.querySelector('.category_section');
 
     const listCategory = document.querySelector(this.listEl);
+    
+    if(!listCategory){
+      return;
+    }
 
     listCategory.addEventListener('click', event => {
       // Додав щоб івент спрацьовував тільки на лішки, а також функцію для спіннера from Yaroslav Peleshko
@@ -208,7 +215,7 @@ export default class bookAPI {
                  </li>`;
             })
             .join('');
-          noda.innerHTML = `<ul class="genre_cards_list">
+          noda.innerHTML = `<ul class="genre_cards_list category">
           ${bookItemMarkup}
           </ul>`;
         }

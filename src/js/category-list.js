@@ -6,6 +6,9 @@ api.renderAllCategoriesList(".categories-list");
 api.renderAllBooksInCategory();
 async function loadHomepage(){
     const list = document.querySelector('.category_section');
+    if (!list) {
+        return;
+    }
     const topBooks = await api.getTopBooks();
     api.renderHomePage(list, topBooks);
 }
