@@ -253,6 +253,7 @@
 
 
 .btn_scroll_up-container{
+  display:none;
  @media(min-width:380px){
     position: fixed;
     bottom: 0px;
