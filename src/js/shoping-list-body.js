@@ -3,7 +3,10 @@
 const NAME_STORAGE = 'shopping-list';
 
 const shopingListBooksRef = document.querySelector('.shoping_list_books');
-console.log(shopingListBooksRef);
+
+if (!shopingListBooksRef) {
+  return;
+}
 
 const shopingListArrey = JSON.parse(localStorage.getItem(NAME_STORAGE)) ?? [];
 
