@@ -25,7 +25,7 @@
   overflow-x: hidden;
   overflow-y: auto;
   transform: translate(-50%,-50%)scale(1);
-    max-height: 85vw;
+    max-height: 100vw;
     min-width: 335px;
     background-color: #FFFFFF;
     border: 2px solid #111111;
@@ -208,7 +208,8 @@ margin-bottom: 4px;
 }
 
 .modal-add-btn{
-    width: 211px;
+    width: 279px;
+    padding: 23px 14px;
     height: 46px;
     margin-right: auto;
     margin-left: auto;
