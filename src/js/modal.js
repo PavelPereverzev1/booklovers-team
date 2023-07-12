@@ -6,8 +6,10 @@ import { load } from './storage';
 
 const modalBackdrop = document.querySelector('.modal-backdrop');
 const closeBtn = document.querySelector('.modal-close-btn');
-const list = document.querySelector('.best_sellers_list');
+const list = document.querySelector(".js-category_div");
 const addRemoveBtn = document.querySelector('.modal-add-btn');
+
+
 
 export const nameBtn = {
   add: 'Add to shopping list',
@@ -33,8 +35,12 @@ async function getBookById(bookId) {
 
 async function handleListClick(event) {
   const target = event.target;
-  if (target.classList.contains('bestSellers_image_place')) {
-    const bookId = target.dataset.bookId;
+  
+  if (target.classList.contains('category_image_place') || target.classList.contains('writer_name') || target.classList.contains('name_of_the_book')) {
+    
+    const liEl = target.parentElement;
+    const bookId = liEl.dataset.bookid;
+    // console.dir(bookId);
     const bookData = await getBookById(bookId);
     createModalMarkup(bookData);
     openModal();
@@ -46,10 +52,10 @@ async function handleListClick(event) {
 function createModalMarkup(data) {
   const modalContent = document.querySelector('.modal-flex-container');
   modalContent.innerHTML = `
-    <img class="modal-image-book" src="${data.book_image}" alt="Book cover">
-
+   
     <div class="modal-flex-content">  
-
+    <img class="modal-image-book" src="${data.book_image}" alt="Book cover">
+    <div class="modal-flex-div">  
     <h2 class="modal-book-name">${data.title}</h2>
     <p class="modal-author">${data.author}</p>
     <p class="modal-description">${data.description}</p>
@@ -62,10 +68,10 @@ function createModalMarkup(data) {
             <a class="modal-shops-images" href="${data.buy_links[1].url}" target="_blank">
                 <img class="modal-image-apple" src="${appleBookIcon}" alt="Apple shop">
         </a>
-        <a class="modal-shops-images" href="${data.buy_links[2].url}" target="_blank">
+        <a class="modal-shops-images" href="${data.buy_links[4].url}" target="_blank">
             <img class="modal-image-bookshop" src="${bookshopIcon}" alt="Bookshop">
         </a>
-
+        </div>
     </div>
 </div>
     `;
@@ -97,9 +103,18 @@ function closeModal() {
   document.body.classList.remove('no-scroll');
 }
 
-list.addEventListener('click', handleListClick);
+if (list) {
+  list.addEventListener('click', handleListClick);
+}
+
+if(closeBtn){
 closeBtn.addEventListener('click', handleCloseBtnClick);
+}
+
+if(modalBackdrop){
 modalBackdrop.addEventListener('click', handleModalBackdropClick);
+}
+
 document.addEventListener('keydown', handleKeyDown);
 
 function removeEventListeners() {

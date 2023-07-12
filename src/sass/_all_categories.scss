@@ -34,8 +34,8 @@
   margin-bottom: 32px;
 }
 
-.best_sellers_header {
-  color: #111;
+.category_header {
+  color:var(--var-text-fc);
   font-size: 32px;
   font-style: normal;
   font-weight: 700;
@@ -78,10 +78,10 @@
   }
 }
 
-.top_of_genres_div {
+.genre_div {
   padding-top: 40px;
 }
-.top_genre_cards_list {
+.genre_cards_list {
   margin-bottom: 8px;
   flex-wrap: wrap;
   @media (max-width: 767px) {
@@ -89,7 +89,6 @@
       display: none;
     }
   }
-
   @media (max-width: 1439px) {
     li:not(:nth-child(-n + 3)) {
       display: none;
@@ -108,8 +107,49 @@
     margin-bottom: 32px;
   }
 }
+
+.genre_cards_list.category {
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+  @media (max-width: 767px) {
+    li:not(:first-child) {
+      display: block;
+      justify-content: center;
+    }
+  }
+  @media (max-width: 1439px) {
+    li:not(:nth-child(-n + 3)) {
+      display: block;
+    }
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    gap: 25px;
+    margin-bottom: 20px;
+  }
+  @media (min-width: 1440px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 22px;
+    margin-bottom: 32px;
+  }
+}
+ 
+.list_book_item{
+  @media (min-width: 768px) {
+    max-width: 218px;
+    max-height: 366px;
+  }
+  @media (min-width: 1440px) {
+    max-width: 180px;
+    max-height: 306px;
+  }
+
+}
+
 .name_of_the_book {
-  color: #111;
+  color: var(--var-text-fc);
   font-size: 16px;
   font-style: normal;
   font-weight: 700;
@@ -127,7 +167,7 @@
   letter-spacing: -0.48px;
 }
 
-.bestSellers_image_place {
+.category_image_place {
   border-radius: 8px;
   width: 335px;
   height: 485px;
@@ -149,7 +189,7 @@
   border-radius: 40px;
   border: 2px solid #4f2ee8;
 
-  color: #111;
+  color: var(--var-text-fc);
 
   font-size: 14px;
   font-style: normal;
@@ -176,12 +216,13 @@
 .quick_view_card {
   position: relative;
   overflow: hidden;
+  cursor: pointer;;
 }
 
 .quick_view_card::after {
   content: 'quick view ';
   position: absolute;
-  bottom: 14;
+  bottom: 50;
   left: 0;
   display: flex;
   height: 70px;
@@ -206,7 +247,7 @@
 .quick_view_card:hover::after {
   opacity: 1;
   transition: opacity 600ms, transform 500ms;
-  bottom: 14;
+  bottom: 50;
   transform: scale(1);
 }
 

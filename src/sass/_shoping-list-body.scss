@@ -17,7 +17,7 @@
 
 .shoping_list_title {
     margin-bottom: 120px;
-    
+    color: var(--var-text-fc);
     font-size: 32px;
     line-height: 38px;
 }
@@ -49,7 +49,7 @@
 
 .shoping_list_text {
     display: block;
-    color: rgba(0, 0, 0, 0.60);
+    color: var(--var-shop-list-text);
     text-align: center;
     font-size: 14px;
     line-height: 18px;

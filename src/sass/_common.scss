@@ -34,10 +34,11 @@
 }
 
 /*========VARIABLES========*/
-// $clr-background-light: #f6f6f6;
+$clr-background-light: #f6f6f6;
 $clr-background-dark: #202024;
 $clr-brand:#4F2EE8;
 $clr-accent: #EAC645;
+$clr-text-black: #000;
 
 :root {
     --var-body-bg: #F6F6F6;
@@ -46,6 +47,8 @@ $clr-accent: #EAC645;
     --var-logo-clr: #000;
     --var-ico-brg: #111; 
     --var-hover-fc: #4F2EE8;
+    --var-clr-text: #000;
+    --var-shop-list-text: rgba(0, 0, 0, 0.60);
 }
 
 [dark] {
@@ -55,6 +58,8 @@ $clr-accent: #EAC645;
     --var-logo-clr: #F3F3F3;
     --var-ico-brg: #FFF; 
     --var-hover-fc: #EAC645;
+    --var-clr-text: #FFF;
+    --var-shop-list-text: rgba(255, 255, 255, 0.60)
 }
 
 
@@ -63,6 +68,7 @@ $clr-accent: #EAC645;
 body {
   margin: 0;
   font-family: 'DM Sans', sans-serif;
+  background-color: var(--var-body-bg);
 }
 button {
   padding: 0;
