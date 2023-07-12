@@ -122,7 +122,7 @@
 .user_avatar {
   width: 37px;
   height: 37px;
-  border-radius: 37px;
+  border-radius: 50%;
   background: lightgray 50% / cover no-repeat;
 }
 
@@ -136,28 +136,14 @@
 
 .background-gallery {
   position: absolute;
-  top: 90%;
-  left: 55%;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 380px;
+  background-image: url('../images/mobile-home/books-min.png');
+  background-repeat: no-repeat;
+  background-size: 380px 380px;
   z-index: -1;
-  width: 450.001px;
-  height: 439px;
-  transform: translate(-50%, -50%) rotate(-15deg);
-  flex-shrink: 0;
-}
-
-.background-gallery_list {
-  display: flex;
-  flex-wrap: wrap;
-  column-gap: 30px;
-  row-gap: 20px;
-}
-
-.background-gallery_list_item {
-  width: 90px;
-  height: 130px;
-  //   background-color: antiquewhite;
-  border-radius: 8px;
-  background: lightgray 50% / cover no-repeat;
 }
 
 .nav-list.mobile_nav-list {
@@ -170,21 +156,15 @@
   margin-bottom: auto;
 }
 
-@media (max-width: 768px) {
-  .header-sec {
-    position: fixed;
-    top: 0;
-    left: 50%;
-    transform: translateX(-50%);
-  }
+.nav-list.mobile_nav-list .nav-link {
+  color: #fff;
+}
 
-  .nav-link {
-    color: #fff;
-  }
-
-  .nav-link.current {
-    color: #111;
-  }
+.nav-list.mobile_nav-list .nav-link.current,
+.nav-list.mobile_nav-list .nav-link:hover,
+.nav-list.mobile_nav-list .nav-link:focus,
+.nav-list.mobile_nav-list .nav-link:active {
+  color: #111;
 }
 
 @media (min-width: 768px) {
