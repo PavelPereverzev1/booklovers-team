@@ -136,6 +136,15 @@
   }
 }
  
+.list_book_item{
+  @media (min-width: 768px) {
+    max-width: 218px;
+  }
+  @media (min-width: 1440px) {
+    max-width: 180px;
+  }
+
+}
 
 .name_of_the_book {
   color: var(--var-text-fc);
