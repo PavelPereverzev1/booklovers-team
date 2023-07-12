@@ -9,12 +9,12 @@ import iconCart from '../images/icons.svg';
 
 const NAME_STORAGE = 'shopping-list';
 const shopingListBooksRef = document.querySelector('.shoping_list_books');
+const shopingListArrey = JSON.parse(localStorage.getItem(NAME_STORAGE)) ?? [];
+let quantityAllBooks = shopingListArrey.length;
 
 if (!shopingListBooksRef) {
   return;
 }
-
-const shopingListArrey = JSON.parse(localStorage.getItem(NAME_STORAGE)) ?? [];
 
 shopingListBooksRef.addEventListener('click', onRemoveButtonClick);
 
@@ -24,8 +24,6 @@ function onRemoveButtonClick(evt) {
   const target = evt.target;
   const currentBook = target.closest('.shoping-list-book-card');
   const currentBookId = currentBook.dataset.id;
-  let quantityAllBooks = shopingListArrey.length;
-  console.log(quantityAllBooks);
 
   if (
     target.classList.contains('icon-cart') ||
@@ -35,7 +33,12 @@ function onRemoveButtonClick(evt) {
     removeBookFromStorage(currentBookId);
     currentBook.remove();
     quantityAllBooks -= 1;
-    console.log(quantityAllBooks);
+  }
+  if (quantityAllBooks === 0) {
+    shopingListBooksRef.innerHTML = `<div class="shoping_list_box">
+        <p class="shoping_list_text">This page is empty, add some books and proceed to order.</p>
+        <img class="shoping_list_image" src="${booksShopingList}" alt="books">
+    </div>`;
   }
 }
 
