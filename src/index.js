@@ -8,9 +8,6 @@ import './js/theme-switcher';
 import './js/handle-shopping-list-modal';
 import './js/theme-switcher';
 import './js/modal';
-import './js/scroll-up';
-
-
+import './js/scroll-up'
 import './js/mobile-menu';
 import './js/shoping-list-body';
-
