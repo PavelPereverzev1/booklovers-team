@@ -9,10 +9,10 @@ function createMarkup(slide, index){
         .toString()
         .padStart(2, '0')}</div>
       <a href="${slide.url}" class="slider__link" target="blank">
-        <img srcset="${slide.img.imageUrl.href}, ${
+        <img srcset="${slide.img.imageUrl}, ${
   slide.img.retinaImageUrl.href
 } 2x" 
-        src="${slide.img.imageUrl.href}"
+        src="${slide.img.imageUrl}"
         alt="${slide.title}" 
         class="slider__png">
       </a>
