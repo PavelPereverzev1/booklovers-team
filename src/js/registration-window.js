@@ -57,10 +57,13 @@ function controlBtnLog() {
   if (load(NAME_STORAGE_USER)) {
     const { name } = load(NAME_STORAGE_USER);
 
-    refs.loginBtn.style.display = 'none';
-    refs.userBtn.style.display = 'flex';
+    refs.loginBtn.classList.remove('show');
+    refs.userBtn.classList.add('show');
     refs.userBtnText.textContent = name;
+    return;
   }
+  refs.loginBtn.classList.add('show');
+  refs.userBtn.classList.remove('show');
 }
 
 function getLogoutBtn(event) {
