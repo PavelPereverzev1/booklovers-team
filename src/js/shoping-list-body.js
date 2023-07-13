@@ -3,7 +3,7 @@
 import { removeBookFromStorage } from './handle-shopping-list-modal';
 import amazonIcon from '../images/amazon.jpg';
 import appleBookIcon from '../images/apple-book.jpg';
-import bookshopIcon from '../images/book-shop.jpg';
+import bookshopIcon from '../images/book.png';
 import booksShopingList from '../images/books-shoping-list.png';
 import iconCart from '../images/icons.svg';
 
@@ -72,14 +72,14 @@ function createMarkupShoppingList(arrey, list) {
                     </button>
                     <ul class="book-stores">
                         <li>
-                            <a href="${buy_links[0].url}">
+                            <a href="${buy_links[0].url}" target="_blank" rel="noreferrer noopener">
                                 <img class="icon-store amazon" src="${amazonIcon}" alt="Book cover" /></a>
                         </li>
                         <li>
-                            <a href="${buy_links[1].url}"><img class="icon-store apple-book" src="${appleBookIcon}" alt="Book cover" /></a>
+                            <a href="${buy_links[1].url}" target="_blank" rel="noreferrer noopener"><img class="icon-store apple-book" src="${appleBookIcon}" alt="Book cover" /></a>
                         </li>
                         <li>
-                            <a href="${buy_links[4].url}"><img class="icon-store book-shop" src="${bookshopIcon}" alt="Book cover" /></a>
+                            <a href="${buy_links[4].url}" target="_blank" rel="noreferrer noopener"><img class="icon-store book-shop" src="${bookshopIcon}" alt="Book cover" /></a>
                         </li>
                     </ul>
                 </div>
