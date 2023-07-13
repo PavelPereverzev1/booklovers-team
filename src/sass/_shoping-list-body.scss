@@ -11,20 +11,17 @@
     }
 }
 
-.shoping_list_container {
-    width: 100%;
-}
+// .shoping_list_container {
+//     width: 100%;
+// }
 
 .shoping_list_title {
-    margin-bottom: 120px;
     color: var(--var-text-fc);
     font-size: 32px;
     line-height: 38px;
 }
  @media (min-width: 768px) {
     .shoping_list_title {
-        margin-bottom: 140px;
-
         font-size: 48px;
         line-height: 52px;
     }
@@ -39,11 +36,13 @@
     width: 265px;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 120px;
 }
 
 @media (min-width: 768px) {
     .shoping_list_box {
         width: 349px;
+        margin-top: 140px;
     }
 }
 
@@ -79,3 +78,14 @@
         margin-right: 13.5px;
     }
  }
+
+//  =========== books from local-storige ========
+
+.shoping_list_books {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+
+    width: 100%;
+    margin-top: 40px;
+}
