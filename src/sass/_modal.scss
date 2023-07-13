@@ -273,3 +273,7 @@
     font-size: 12px;
   }
 }
+
+body[dark] .modal-shops-images{
+    filter: invert(.87);
+}

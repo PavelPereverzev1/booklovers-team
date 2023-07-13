@@ -206,6 +206,10 @@
   }
 }
 
+body[dark] .icon-store{
+  filter: invert(0.92);
+}
+
 .icon-store.amazon {
   width: 32px;
   height: 11px;
