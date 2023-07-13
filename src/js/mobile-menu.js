@@ -1,4 +1,5 @@
 import { save, load } from './storage';
+import { NAME_STORAGE_USER } from './registration-window';
 
 const refs = {
   burgerBtn: document.querySelector('.burger-btn'),
@@ -13,13 +14,7 @@ const refs = {
 refs.burgerBtn.addEventListener('click', handleMobileMenu);
 refs.closeBtn.addEventListener('click', handleMobileMenu);
 
-const user = {
-  name: 'userName',
-};
-
 let menuStatus = 'close';
-
-save('user', user);
 
 function handleMobileMenu() {
   if (menuStatus === 'close') {
@@ -44,8 +39,9 @@ function handleMobileMenu() {
 }
 
 function openMobileMenu() {
-  if (load('user')) {
-    refs.userName.textContent = user.name;
+  if (load('userData')) {
+    const { name } = load(NAME_STORAGE_USER);
+    refs.userName.textContent = name;
 
     removeClass(refs.mobileMenuContainer, 'mobile-menu_is-hidden');
     addClass(refs.mobileMenuUser, 'open');
@@ -56,10 +52,9 @@ function openMobileMenu() {
 }
 
 function closeMobileMenu() {
-  if (load('user')) {
+  if (load('userData')) {
     addClass(refs.mobileMenuContainer, 'mobile-menu_is-hidden');
     removeClass(refs.mobileMenuUser, 'open');
-
     return;
   }
   addClass(refs.mobileMenuContainer, 'mobile-menu_is-hidden');

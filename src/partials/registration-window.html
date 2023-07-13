@@ -1,42 +1,55 @@
 <!-- Author: YURII CORSSA -->
 
-<div class="backdrop-registration"></div>
-<div class="modal-registration">
-  <form name="signup_form" class="signup_form">
-    <input
-      type="text"
-      name="name"
-      class="signup_input name"
-      placeholder="name"
-    />
+<div class="modal-registration container js-modal-registration">
+  <div class="modal-registration_form">
+    <form name="signup_form " class="signup_form js-sign-up-form">
+      <input
+        type="text"
+        name="name"
+        class="signup_input name"
+        placeholder="name"
+        required
+      />
 
-    <div class="input_wrapper">
-      <input
-        type="email"
-        name="email"
-        class="signup_input email"
-        placeholder="email"
-      />
-      <svg class="modal-registration_icon">
-        <use href="./images/icons.svg#icon-mail-02"></use>
-      </svg>
+      <div class="input_wrapper">
+        <input
+          type="email"
+          name="email"
+          class="signup_input email"
+          placeholder="email"
+          autocomplete="username"
+          required
+        />
+        <svg class="modal-registration_icon">
+          <use href="./images/icons.svg#icon-mail-02"></use>
+        </svg>
+      </div>
+      <div class="input_wrapper">
+        <input
+          type="password"
+          name="pwd"
+          class="signup_input pwd"
+          placeholder="password"
+          autocomplete="current-password"
+          required
+        />
+        <svg class="modal-registration_icon">
+          <use href="./images/icons.svg#icon-lock-02"></use>
+        </svg>
+      </div>
+      <button type="submit" class="signup_btn js-sign-up-btn">sign up</button>
+    </form>
+    <div class="sign-up-in_links">
+      <button type="button" class="signup_btn_link active">sign up</button>
+      <button type="button" class="signin_btn_link" disabled>sign in</button>
     </div>
-    <div class="input_wrapper">
-      <input
-        type="password"
-        name="pwd"
-        class="signup_input pwd"
-        placeholder="password"
-      />
-      <svg class="modal-registration_icon">
-        <use href="./images/icons.svg#icon-lock-02"></use>
+    <button
+      type="button"
+      class="modal-registration-close_btn js-modal-registration-close-btn"
+    >
+      <svg class="modal-registration-close_icon">
+        <use href="./images/icons.svg#icon-x-close"></use>
       </svg>
-    </div>
-    <button type="submit" class="signup_btn">sign up</button>
-  </form>
-  <div class="sign-up-in_links">
-    <button type="button" class="signup_btn_link active">sign up</button>
-    <button type="button" class="signin_btn_link">sign in</button>
+    </button>
   </div>
-
 </div>
