@@ -144,8 +144,8 @@
 @media (min-width: 768px) {
   .modal-registration_form {
     padding: 80px 40px 40px 40px;
-    color: #111;
-    background-color: $clr-background-light;
+    color: var(--var-reg-fc);
+    background-color: var(--var-body-bg);
   }
 
   .signup_form {
@@ -155,25 +155,25 @@
 
   .signup_input {
     padding: 20px 66px 20px 40px;
-    color: #111;
-    border: 2px solid #111;
+    color: var(--var-reg-fc);
+    border: 2px solid var(--var-reg-fc);
   }
 
   .signup_input::placeholder {
-    color: #111;
+    color: var(--var-reg-fc);
   }
 
   .modal-registration_icon {
     width: 28px;
     height: 28px;
     fill: transparent;
-    stroke: #111;
+    stroke: var(--var-reg-fc);
   }
 
   .signup_btn {
     margin-top: 12px;
     color: #f3f3f3;
-    background-color: #111;
+    background-color: var(--var-reg-fc);
   }
 
   .signup_btn_link,
@@ -182,7 +182,7 @@
   }
 
   .modal-registration-close_icon {
-    stroke: #111;
+    stroke: var(--var-reg-fc);
     width: 28px;
     height: 28px;
   }

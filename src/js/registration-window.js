@@ -5,6 +5,7 @@ export const NAME_STORAGE_USER = 'userData';
 const refs = {
   loginBtn: document.querySelector('.js-log-in-btn'),
   loginBtnMobile: document.querySelector('.js-log-in-btn-mobile'),
+  logoutBtn: document.querySelector('.js-log-out-btn'),
   logoutBtnMobile: document.querySelector('.js-log-out-btn-mobile'),
   modalRegistration: document.querySelector('.js-modal-registration'),
   closeBtn: document.querySelector('.js-modal-registration-close-btn'),
