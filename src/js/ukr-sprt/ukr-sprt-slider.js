@@ -5,10 +5,9 @@ import 'swiper/swiper.min.css';
 // import 'swiper/modules/navigation/navigation.min.css';
 import fondsData from './ukr-sprt-data';
 import createMarkup from './create-markup';
-const markup = fondsData.map(createMarkup).join('');
+const markup = fondsData.map(createMarkup).join('') + fondsData.map(createMarkup).join('');
 const sliderRef = document.querySelector('.swiper-wrapper');
 
-sliderRef.insertAdjacentHTML('beforeend', markup);
 sliderRef.insertAdjacentHTML('beforeend', markup);
 
 // Swiper.use([Navigation]);
