@@ -11,9 +11,9 @@
     }
 }
 
-// .shoping_list_container {
-//     width: 100%;
-// }
+.shoping_list_container {
+    width: 100%;
+}
 
 .shoping_list_title {
     color: var(--var-text-fc);
@@ -48,7 +48,7 @@
 
 .shoping_list_text {
     display: block;
-    color: var(--var-shop-list-text);
+    color: var(--var-shop-list-text) ;
     text-align: center;
     font-size: 14px;
     line-height: 18px;
