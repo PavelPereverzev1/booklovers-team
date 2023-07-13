@@ -4,7 +4,7 @@ import axios from 'axios';
 // } from './render-markup-books-by-data';
 // import fetchData from './best_sellers_load';
 // Додав ще імпорт для спіннера from Yaroslav Peleshko
-import { activeSpinner } from './spinner/spinner';
+import { activeSpinner } from './spinner';
 // ==================================
 
 export default class bookAPI {
