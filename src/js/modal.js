@@ -1,4 +1,3 @@
-
 import amazonIcon from '../images/amazon.jpg';
 import appleBookIcon from '../images/apple-book.jpg';
 import bookshopIcon from '../images/book-shop.jpg';
@@ -7,9 +6,10 @@ import { load } from './storage';
 
 const modalBackdrop = document.querySelector('.modal-backdrop');
 const closeBtn = document.querySelector('.modal-close-btn');
-const list = document.querySelector(".js-category_div");
+const list = document.querySelector('.js-category_div');
 const modal = document.querySelector('.modal');
 const addRemoveBtn = document.querySelector('.modal-add-btn');
+export const modalNotify = document.querySelector('.js-modal-notify-text');
 
 export const nameBtn = {
   add: 'Add to shopping list',
@@ -111,11 +111,13 @@ function handleKeyDown(event) {
 function handleBtn(bookId) {
   const shoppingList = load(NAME_STORAGE);
 
-  if (shoppingList.some((book) => book._id === bookId)) {
+  if (shoppingList.some(book => book._id === bookId)) {
     remameBtn(nameBtn.remove);
+    modalNotify.classList.remove('hidden');
     return;
   }
   remameBtn(nameBtn.add);
+  modalNotify.classList.add('hidden');
 }
 
 export function remameBtn(value) {
