@@ -17,8 +17,6 @@
   height: 228px;
   overflow-y: scroll;
   scrollbar-width: thin;
-  scrollbar-color: #e0e0e0;
-  scrollbar-gutter: stable;
 }
 
 .categories-list-box::-webkit-scrollbar {
@@ -50,13 +48,13 @@
   /* color:#4F2EE8 ; */
   cursor: pointer;
   text-transform: uppercase;
-  font-weight: 700px;
+  font-weight: 700;
 }
 
 .categories-list-item-selected {
   /* color:#4F2EE8 ; */
   text-transform: uppercase;
-  font-weight: 700px;
+  font-weight: 700;
 }
 
 @media screen and (min-width: 768px) {
