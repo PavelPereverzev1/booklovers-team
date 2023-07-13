@@ -1,4 +1,4 @@
-import './js/spinner/spinner';
+import './js/spinner';
 import './js/add-active-marker';
 import './js/ukr-sprt/ukr-sprt-slider';
 import './js/best_sellers_load';
