@@ -2,7 +2,7 @@
 
 import { save, load } from './storage';
 import bookAPI from './book-api-class';
-import { nameBtn, remameBtn } from './modal';
+import { modalNotify, nameBtn, remameBtn } from './modal';
 
 export const NAME_STORAGE = 'shopping-list';
 const api = new bookAPI();
@@ -24,11 +24,13 @@ async function controlShoppingList() {
   if (shoppingList.some(book => book._id === currentBookId)) {
     removeBookFromStorage(currentBookId);
     remameBtn(nameBtn.add);
+    modalNotify.classList.add('hidden');
     return;
   }
 
   saveBookToStorage(currentBook);
   remameBtn(nameBtn.remove);
+  modalNotify.classList.remove('hidden');
 }
 
 /* ---------------------------------- */
