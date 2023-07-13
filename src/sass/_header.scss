@@ -21,10 +21,10 @@
   display: none;
   align-items: center;
 }
-.sign-ico{
+.sign-ico {
   width: 20px;
   height: 20px;
-  stroke: #EAC645;
+  stroke: #eac645;
   margin-left: 82px;
 }
 .log-out-btn {
@@ -42,17 +42,20 @@
   padding: 0 14px;
   font-weight: 500;
   color: #111;
-  display: none;
   align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease-out;
 }
-.log-out-ico{
+.log-out-ico {
   width: 20px;
   height: 20px;
-  stroke: #EAC645;
+  stroke: #eac645;
   margin-left: 82px;
 }
 .user-btn {
-  display: flex;
+  display: none;
+  gap: 9px;
   justify-content: space-between;
   width: 184px;
   height: 45px;
@@ -64,8 +67,11 @@
   padding: 0 12px;
   font-weight: 500;
   color: #ffffff;
-  display: none;
   align-items: center;
+}
+.user-btn span {
+  max-width: 150px;
+  overflow: hidden;
 }
 .user-img {
   display: flex;
