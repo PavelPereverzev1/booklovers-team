@@ -78,14 +78,14 @@
   border: 1.5px solid #111;
 }
 
-.mobile-menu_btn.log-in {
+.mobile-menu_btn.log-in_btn {
   width: 184px;
   height: 48px;
   padding: 14px;
   background: #4f2ee8;
 }
 
-.mobile-menu_btn.log-out {
+.mobile-menu_btn.log-out_btn {
   gap: 4px;
   padding: 14px 24px;
   background: #fff;
@@ -98,11 +98,11 @@
   letter-spacing: -0.56px;
 }
 
-.mobile-menu_btn.log-in span {
+.mobile-menu_btn.log-in_btn span {
   color: #fff;
 }
 
-.mobile-menu_btn.log-out span {
+.mobile-menu_btn.log-out_btn span {
   color: #111;
 }
 
