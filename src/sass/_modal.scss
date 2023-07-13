@@ -27,7 +27,7 @@
   transform: translate(-50%,-50%)scale(1);
     max-height: 100vh;
     min-width: 335px;
-    background-color: #FFFFFF;
+    background-color: var(--var-body-bg);
     border: 2px solid #111111;
     border-radius: 18px;
     padding-top: 0;
@@ -83,7 +83,7 @@ margin-bottom: 4px;
 .modal-close-icon{
     width: 24px;
     height: 24px;
-    stroke: #111111;
+    stroke:  var(--var-text-fc);
     transition: stroke .25s cubic-bezier(.4,0,.2,1),color .25s cubic-bezier(.4,0,.2,1);
 }
 
@@ -148,6 +148,7 @@ margin-bottom: 4px;
   line-height: 1.13;
   letter-spacing: -.04em;
   margin-bottom: 4px;
+  color: var(--var-mdl-fc);
 }
 
 @media  screen and (min-width: 768px ) {
@@ -186,6 +187,7 @@ margin-bottom: 4px;
     line-height: 1.28;
     letter-spacing: -.04em;
     margin-bottom: 14px;
+    color: var(--var-mdl-fc);
 }
 
 @media  screen and (min-width: 768px ) {
@@ -223,6 +225,7 @@ margin-bottom: 4px;
     line-height: 1.28;
     letter-spacing: -.01em;
     text-transform: uppercase;
+    color: var(--var-mdl-fc);
 
     display: flex;
     justify-content: center;
@@ -245,3 +248,11 @@ margin-bottom: 4px;
     letter-spacing: -.01em;
     }
 }
+
+// .congratulations-text {
+//     font-family: 'DM Sans';
+//     font-size: 14px;
+//     line-height: 1.28;
+//     color: #4F2EE8;
+//     margin-top: 20px;
+//   }
