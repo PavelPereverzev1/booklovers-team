@@ -20,9 +20,13 @@ shopingListBooksRef.addEventListener('click', onRemoveButtonClick);
 
 createMarkupShoppingList(shopingListArrey, shopingListBooksRef);
 
-function onRemoveButtonClick(evt) {
+async function onRemoveButtonClick(evt) {
   const target = evt.target;
   const currentBook = target.closest('.shoping-list-book-card');
+
+  if (!currentBook) {
+    return;
+  }
   const currentBookId = currentBook.dataset.id;
 
   if (
