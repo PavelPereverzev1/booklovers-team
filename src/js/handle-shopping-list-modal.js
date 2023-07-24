@@ -5,7 +5,7 @@ import bookAPI from './book-api-class';
 import { modalNotify, nameBtn, remameBtn } from './modal';
 
 export const NAME_STORAGE = 'shopping-list';
-const api = new bookAPI();
+const api = new bookAPI(".categories-list", ".category_section");
 
 let currentBookId = '';
 

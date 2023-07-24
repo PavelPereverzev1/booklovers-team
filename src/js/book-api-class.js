@@ -10,7 +10,33 @@ import { activeSpinner } from './spinner';
 export default class bookAPI {
   baseURl = 'https://books-backend.p.goit.global/books/';
   listEl = '';
+  position = {
+    categoryList: '.categories-list',
+    contentBox: '.category_section',
+  }
+  constructor(categoryList, contentBox){
 
+    if (categoryList) {
+      this.position.categoryList = categoryList;
+    }
+
+    if (contentBox) {
+      this.position.contentBox = contentBox;
+    }
+    const contentBoxEl = document.querySelector(this.position.contentBox);
+
+    this.renderAllCategoriesList(this.position.categoryList);
+    
+    this.getTopBooks().then((response) => {
+      
+      this.renderHomePage(contentBoxEl, response);
+      return response;
+    })
+    .catch(e => console.error(e));
+    
+    this.renderAllBooksInCategory();
+    
+  }
   async getAllCategories() {
     try {
       const response = await fetch(this.baseURl + 'category-list');
@@ -152,6 +178,9 @@ export default class bookAPI {
   }
 
   renderHomePage(contentBox, collections) {
+    if (!contentBox) {
+      return;
+    }
     contentBox.childNodes.forEach(noda => {
       if (noda.nodeName !== '#text') {
         if (noda.nodeName === 'H1') {
